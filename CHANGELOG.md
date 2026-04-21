@@ -1,5 +1,8 @@
 # CHANGE LOG
 
+## 13.57
+- If using Random Armour and not using Hits per LOcation, you can now roll the Random Armour Values from the combat tab (bugfix)
+
 ## 13.56
 - Migration of Github account
 
