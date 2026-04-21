@@ -301,7 +301,6 @@ export class BRPCharacterSheet extends BRPActorSheetV2 {
           enriched: await foundry.applications.ux.TextEditor.implementation.enrichHTML(
             story.value,
             {
-              async: true,
               secrets: context.editable
             }
           )

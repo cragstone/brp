@@ -1,4 +1,3 @@
-/* global $ */
 export default function (application, html, data) {
   if ((application.document.parent.getFlag('brp', 'css-adventure-entry') ?? false)) {
     if (!html.classList.contains('css-adventure-entry')) {
@@ -7,14 +6,15 @@ export default function (application, html, data) {
     const toggles = html.querySelectorAll('section.tmi-toggleable p.toggle')
     for (const toggle of toggles) {
       toggle.onclick = (event) => {
-        const obj = $(event.currentTarget)
-        const section = obj.closest('section.tmi-toggleable').find('div.toggle:first')
-        if (section.is(':visible')) {
-          obj.text('Reveal')
-          section.slideUp()
+        const el = event.currentTarget
+        const section = el.closest('section.tmi-toggleable')?.querySelector('div.toggle')
+        if (!section) return
+        if (section.style.display !== 'none') {
+          el.textContent = 'Reveal'
+          section.style.display = 'none'
         } else {
-          obj.text('Hide')
-          section.slideDown()
+          el.textContent = 'Hide'
+          section.style.display = ''
         }
       }
     }

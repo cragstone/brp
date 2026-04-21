@@ -4,8 +4,7 @@
   {{! Editor for description}}
   <div class="description-doc">
     {{#if editable}}
-      <prose-mirror name="system.description" data-document-u-u-i-d="{{item.uuid}}" value="{{system.description}}"
-        collaborate="true" toggled="true">
+      <prose-mirror name="system.description" value="{{system.description}}" editable="{{editable}}" toggled="false">
         {{{enrichedDescription}}}
       </prose-mirror>
     {{else}}

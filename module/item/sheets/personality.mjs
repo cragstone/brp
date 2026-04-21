@@ -257,8 +257,8 @@ export class BRPPersonalitySheet extends BRPItemSheetV2 {
   async _onItemDelete(event, collectionName = 'skills') {
     event.preventDefault();
     event.stopImmediatePropagation();
-    const item = $(event.currentTarget).closest('.item')
-    const itemId = item.data('item-id')
+    const item = event.currentTarget.closest('.item')
+    const itemId = item.dataset.itemId
     const itemIndex = this.item.system[collectionName].findIndex(i => (itemId && i.uuid === itemId))
     if (itemIndex > -1) {
       const collection = this.item.system[collectionName] ? foundry.utils.duplicate(this.item.system[collectionName]) : []
@@ -269,11 +269,11 @@ export class BRPPersonalitySheet extends BRPItemSheetV2 {
 
   //Delete's a skill in an Optional Skill Group
   async _onGroupItemDelete(event) {
-    const item = $(event.currentTarget).closest('.item')
-    const group = Number(item.closest('.item-list.group').data('group'))
+    const item = event.currentTarget.closest('.item')
+    const group = Number(item.closest('.item-list.group').dataset.group)
     const groups = foundry.utils.duplicate(this.item.system.groups)
     if (typeof groups[group] !== 'undefined') {
-      const itemId = item.data('item-id')
+      const itemId = item.dataset.itemId
       const itemIndex = groups[group].skills.findIndex(i => (itemId && i.uuid === itemId))
       if (itemIndex > -1) {
         groups[group].skills.splice(itemIndex, 1)
@@ -283,8 +283,8 @@ export class BRPPersonalitySheet extends BRPItemSheetV2 {
   }
 
   async _onItemView(event) {
-    const item = $(event.currentTarget).closest('.item')
-    const brpid = item.data('brpid')
+    const item = event.currentTarget.closest('.item')
+    const brpid = item.dataset.brpid
     let tempItem = (await game.system.api.brpid.fromBRPIDBest({ brpid: brpid }))[0]
     if (tempItem) { tempItem.sheet.render(true) };
   }

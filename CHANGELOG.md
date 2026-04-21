@@ -1,5 +1,14 @@
 # CHANGE LOG
 
+## 14.1
+- This is all the work of RevCivic - thank you for this
+- Updated for FoundryVTT Version 14 compatibility
+- Replaced all jQuery DOM API usage with native browser DOM APIs (jQuery was removed in FoundryVTT v14)
+- Fixed `CONST.CHAT_MESSAGE_OTHER` reference to use `CONST.CHAT_MESSAGE_STYLES.OTHER`
+- Removed deprecated `{ async: true }` option from `TextEditor.enrichHTML` calls
+- Finalize release workflow and correct version tagging
+- Add standard GitHub Actions release workflow for automated Foundry VTT package publishing
+
 ## 13.57
 - If using Random Armour and not using Hits per LOcation, you can now roll the Random Armour Values from the combat tab (bugfix)
 

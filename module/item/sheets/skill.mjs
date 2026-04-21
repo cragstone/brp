@@ -224,8 +224,8 @@ export class BRPSkillSheet extends BRPItemSheetV2 {
   async _onItemDelete(event, collectionName = 'groupSkills') {
     event.preventDefault();
     event.stopImmediatePropagation();
-    const item = $(event.currentTarget).closest('.item')
-    const itemId = item.data('item-id')
+    const item = event.currentTarget.closest('.item')
+    const itemId = item.dataset.itemId
     const itemIndex = this.item.system[collectionName].findIndex(i => (itemId && i.uuid === itemId))
     if (itemIndex > -1) {
       const collection = this.item.system[collectionName] ? foundry.utils.duplicate(this.item.system[collectionName]) : []
@@ -235,8 +235,8 @@ export class BRPSkillSheet extends BRPItemSheetV2 {
   }
 
   async _onItemView(event) {
-    const item = $(event.currentTarget).closest('.item')
-    const brpid = item.data('brpid')
+    const item = event.currentTarget.closest('.item')
+    const brpid = item.dataset.brpid
     let tempItem = (await game.system.api.brpid.fromBRPIDBest({ brpid: brpid }))[0]
     if (tempItem) { tempItem.sheet.render(true) };
   }

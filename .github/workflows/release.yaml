@@ -1,0 +1,64 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - '*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Version tag to release (must match system.json version)'
+        required: true
+        type: string
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set tag name
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "TAG_NAME=${{ github.event.inputs.tag }}" >> $GITHUB_ENV
+          else
+            echo "TAG_NAME=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+          fi
+
+      - name: Verify version matches tag
+        run: |
+          SYSTEM_VERSION=$(jq -r '.version' system.json)
+          if [[ "$SYSTEM_VERSION" != "$TAG_NAME" ]]; then
+            echo "ERROR: system.json version ($SYSTEM_VERSION) does not match tag ($TAG_NAME)"
+            echo "Please update system.json version before tagging."
+            exit 1
+          fi
+
+      - name: Update system.json URLs
+        run: |
+          jq --arg tag "$TAG_NAME" \
+             --arg repo "$GITHUB_REPOSITORY" \
+             '.manifest = "https://github.com/\($repo)/releases/latest/download/system.json" |
+              .download = "https://github.com/\($repo)/releases/download/\($tag)/brp.zip"' \
+             system.json > system.json.tmp && mv system.json.tmp system.json
+
+      - name: Create zip
+        run: |
+          zip -r brp.zip . \
+            --exclude "*.git*" \
+            --exclude ".editorconfig" \
+            --exclude ".gitattributes" \
+            --exclude ".gitignore" \
+            --exclude "Readme.md" \
+            --exclude "*.zip"
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ env.TAG_NAME }}
+          name: ${{ env.TAG_NAME }}
+          artifacts: "brp.zip,system.json"
+          allowUpdates: true
+          token: ${{ secrets.GITHUB_TOKEN }}

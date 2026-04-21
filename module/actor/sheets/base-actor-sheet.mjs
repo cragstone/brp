@@ -289,12 +289,7 @@ export class BRPActorSheetV2 extends api.HandlebarsApplicationMixin(sheets.Actor
     let html = await foundry.applications.handlebars.renderTemplate(messageTemplate, messageData);
 
     let chatData = {};
-    let chatType = ""
-//    if (!foundry.utils.isNewerVersion(game.version, '11')) {
-//      chatType = CONST.CHAT_MESSAGE_STYLES.OTHER
-//    } else {
-      chatType = CONST.CHAT_MESSAGE_OTHER
-//    }
+    let chatType = CONST.CHAT_MESSAGE_STYLES.OTHER
     chatData = {
       user: game.user.id,
       type: chatType,
@@ -426,8 +421,8 @@ export class BRPActorSheetV2 extends api.HandlebarsApplicationMixin(sheets.Actor
   //Item Toggle
   static async _onItemToggle(event, target) {
     const element = target;
-    const li = $(target).closest("li");
-    const item = this.actor.items.get(li.data("itemId"));
+    const li = target.closest("li");
+    const item = this.actor.items.get(li.dataset.itemId);
     const prop = element.dataset.property;
     let checkProp = {};
     if (['hide', 'improve', 'oppimprove', 'mem', 'injured', 'bleeding', 'incapacitated', 'severed', 'dead', 'unconscious'].includes(prop)) {
@@ -610,9 +605,9 @@ export class BRPActorSheetV2 extends api.HandlebarsApplicationMixin(sheets.Actor
     if (improveType === 'all') {
       await BRPCharDev.onXPGainAll(this.document, this.document.token, rollType)
     } else {
-      const li = $(event.target).closest(".item");
-      let opp = li.data("opp")
-      let itemId = li.data("itemId")
+      const li = event.target.closest(".item");
+      let opp = li.dataset.opp
+      let itemId = li.dataset.itemId
       await BRPCharDev.onXPGainSingle(itemId, this.document, this.document.token, rollType, opp)
     }
   }
@@ -675,8 +670,8 @@ export class BRPActorSheetV2 extends api.HandlebarsApplicationMixin(sheets.Actor
   static async skillInline(event) {
     event.preventDefault();
     const element = event.currentTarget;
-    const li = $(event.currentTarget).closest(".item");
-    const item = this.actor.items.get(li.data("itemId"));
+    const li = event.currentTarget.closest(".item");
+    const item = this.actor.items.get(li.dataset.itemId);
     let field = event.target.dataset.field;
     let newScore = event.target.value;
     if (['base', 'personality', 'profession', 'culture', 'personal','xp','effects', 'currHP', 'quantity',

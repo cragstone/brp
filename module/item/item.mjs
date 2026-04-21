@@ -168,12 +168,9 @@ export class BRPItem extends Item {
         let tempID = await BRPID.guessId(item)
         if (tempID) {
           await item.update({ 'flags.brp.brpidFlag.id': tempID })
-          const html = $(item.sheet.element).find('header.window-header a.header-button.edit-brpid-warning,header.window-header a.header-button.edit-brpid-exisiting')
-          if (html.length) {
-            html.css({
-              color: (tempID ? 'orange' : 'red')
-            })
-          }
+          item.sheet.element?.querySelectorAll('header.window-header a.header-button.edit-brpid-warning, header.window-header a.header-button.edit-brpid-exisiting').forEach(el => {
+            el.style.color = tempID ? 'orange' : 'red'
+          })
           item.render()
         }
       }

@@ -155,14 +155,7 @@ export class BRPCharDev {
   // Display the XP chat card
   static async showXPChat(html, actor) {
     let chatData = {};
-    let chatType = ""
-    if (!foundry.utils.isNewerVersion(game.version, '11')) {
-      chatType = CONST.CHAT_MESSAGE_STYLES.OTHER
-    } else {
-      chatType = CONST.CHAT_MESSAGE_OTHER
-    }
-
-
+    let chatType = CONST.CHAT_MESSAGE_STYLES.OTHER
 
     chatData = {
       user: game.user.id,

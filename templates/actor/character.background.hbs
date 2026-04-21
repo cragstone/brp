@@ -20,7 +20,7 @@
     </div>
     <div class="story">
       {{#if ../editable}}
-        <prose-mirror class="bio-section-value" data-index='{{index}}' target=(concat "system.stories." index ".value") value="{{section.value}}" data-document-u-u-i-d="{{../actor.uuid}}" name=(concat "system.stories." index ".value") collaborate="true" toggled="true">
+        <prose-mirror class="bio-section-value" data-index='{{index}}' target=(concat "system.stories." index ".value") value="{{section.value}}" name=(concat "system.stories." index ".value")  editable="{{editable}}" toggled="false">
           {{{section.enriched}}}
       </prose-mirror>
       {{else}}

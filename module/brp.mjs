@@ -10,8 +10,6 @@ import renderSceneControls from "./hooks/render-scene-controls.mjs"
 import RenderRegionConfig from './hooks/render-region-config.mjs'
 import RenderJournalEntryPageTextSheet from './hooks/render-journal-entry-page-text-sheet.mjs'
 import RenderJournalEntrySheet from './hooks/render-journal-entry-sheet.mjs'
-import RenderJournalSheet from './hooks/render-journal-sheet.mjs'
-import RenderJournalTextPageSheet from './hooks/render-journal-text-page-sheet.mjs'
 import createToken from "./hooks/create-token.mjs";
 import { BRPSelectLists } from "./apps/select-lists.mjs";
 import { updateWorld } from "./setup/update.mjs";
@@ -82,5 +80,4 @@ Hooks.on('createToken', createToken);
 //Add Journal Format Hooks
 Hooks.on('renderJournalEntryPageTextSheet', RenderJournalEntryPageTextSheet)
 Hooks.on('renderJournalEntrySheet', RenderJournalEntrySheet)
-Hooks.on('renderJournalSheet', RenderJournalSheet)
-Hooks.on('renderJournalTextPageSheet', RenderJournalTextPageSheet)
+

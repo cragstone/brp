@@ -112,7 +112,7 @@ export class BRPIDEditor extends HandlebarsApplicationMixin(ApplicationV2) {
         return {
           priority: d.flags.brp.brpidFlag.priority,
           lang: d.flags.brp.brpidFlag.lang ?? 'en',
-          link: await foundry.applications.ux.TextEditor.implementation.enrichHTML(d.link, { async: true }),
+          link: await foundry.applications.ux.TextEditor.implementation.enrichHTML(d.link),
           folder: d?.folder?.name
         }
       }))
@@ -132,7 +132,7 @@ export class BRPIDEditor extends HandlebarsApplicationMixin(ApplicationV2) {
         return {
           priority: d.flags.brp.brpidFlag.priority,
           lang: d.flags.brp.brpidFlag.lang ?? 'en',
-          link: await foundry.applications.ux.TextEditor.implementation.enrichHTML(d.link, { async: true }),
+          link: await foundry.applications.ux.TextEditor.implementation.enrichHTML(d.link, {}),
           folder: d?.folder?.name ?? ''
         }
       }))
@@ -156,9 +156,8 @@ export class BRPIDEditor extends HandlebarsApplicationMixin(ApplicationV2) {
   _onRender(context, options) {
     if (this.element.querySelector('input[name=_existing')) {
       this.element.querySelector('input[name=_existing').addEventListener("change", function (e) {
-        const obj = $(this)
-        const prefix = obj.data('prefix')
-        let value = obj.val()
+        const prefix = this.dataset.prefix
+        let value = this.value
         if (value !== '') {
           value = prefix + BRPUtilities.toKebabCase(value)
         }
@@ -170,8 +169,7 @@ export class BRPIDEditor extends HandlebarsApplicationMixin(ApplicationV2) {
 
     if (this.element.querySelector('select[name=known]')) {
       this.element.querySelector('select[name=known]').addEventListener("change", function (e) {
-        const obj = $(this)
-        let value = obj.val()
+        let value = this.value
         let target = document.querySelector('input[name=id]');
         target.value = value
       })
@@ -180,7 +178,7 @@ export class BRPIDEditor extends HandlebarsApplicationMixin(ApplicationV2) {
   }
 
   static async copyToClip(event, target) {
-    await BRPUtilities.copyToClipboard($(target).siblings('input').val())
+    await BRPUtilities.copyToClipboard(target.parentElement.querySelector('input').value)
   }
 
   static async guessID(event, target) {
@@ -193,12 +191,9 @@ export class BRPIDEditor extends HandlebarsApplicationMixin(ApplicationV2) {
       'flags.brp.brpidFlag.lang': lang,
       'flags.brp.brpidFlag.priority': priority,
     })
-    const html = $(this.document.sheet.element).find('header.window-header .edit-brpid-warning,header.window-header .edit-brpid-exisiting')
-    if (html.length) {
-      html.css({
-        color: (guess ? 'var(--color-text-light-highlight)' : 'red')
-      })
-    }
+    this.document.sheet.element?.querySelectorAll('header.window-header .edit-brpid-warning, header.window-header .edit-brpid-exisiting').forEach(el => {
+      el.style.color = guess ? 'var(--color-text-light-highlight)' : 'red'
+    })
     this.render()
   }
 
@@ -212,12 +207,9 @@ export class BRPIDEditor extends HandlebarsApplicationMixin(ApplicationV2) {
       'flags.brp.brpidFlag.lang': lang,
       'flags.brp.brpidFlag.priority': priority,
     })
-    const html = $(this.document.sheet.element).find('header.window-header .edit-brpid-warning,header.window-header .edit-brpid-exisiting')
-    if (html.length) {
-      html.css({
-        color: (id ? 'var(--color-text-light-highlight)' : 'red')
-      })
-    }
+    this.document.sheet.element?.querySelectorAll('header.window-header .edit-brpid-warning, header.window-header .edit-brpid-exisiting').forEach(el => {
+      el.style.color = id ? 'var(--color-text-light-highlight)' : 'red'
+    })
     this.render()
   }
 

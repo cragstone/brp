@@ -615,11 +615,12 @@ export class BRPCheck {
 
 
   // Display the chat card and roll the dice
+  // Don't use Chat card TYPE anymore in V14
   static async showChat(html, chatMsgData) {
     let chatData = {}
     chatData = {
       author: game.user.id,
-      type: chatMsgData.chatType,
+      //type: chatMsgData.chatType,
       content: html,
       flags: {
         'brp': {
@@ -700,8 +701,8 @@ export class BRPCheck {
     const targetElement = event.currentTarget
     const presetType = targetElement.dataset?.preset
     const dataset = targetElement.dataset
-    const targetChat = $(targetElement).closest('.message')
-    let targetChatId = targetChat[0].dataset.messageId
+    const targetChat = targetElement.closest('.message')
+    let targetChatId = targetChat.dataset.messageId
     let origin = game.user.id
     let originGM = game.user.isGM
 

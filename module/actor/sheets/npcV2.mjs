@@ -53,7 +53,6 @@ export class BRPNPCSheetV2 extends BRPActorSheetV2 {
     context.extDescValue = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
       this.actor.system.extDesc,
       {
-        async: true,
         secrets: this.document.isOwner,
         rollData: this.actor.getRollData(),
         relativeTo: this.actor,

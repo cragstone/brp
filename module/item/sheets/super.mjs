@@ -195,8 +195,8 @@ export class BRPSuperSheet extends BRPItemSheetV2 {
   async _onItemDelete(event, collectionName = 'powerMod') {
     event.preventDefault();
     event.stopImmediatePropagation();
-    const item = $(event.currentTarget).closest('.item')
-    const itemId = item.data('item-id')
+    const item = event.currentTarget.closest('.item')
+    const itemId = item.dataset.itemId
     const itemIndex = this.item.system[collectionName].findIndex(i => (itemId && i.uuid === itemId))
     if (itemIndex > -1) {
       const collection = this.item.system[collectionName] ? foundry.utils.duplicate(this.item.system[collectionName]) : []
@@ -209,8 +209,8 @@ export class BRPSuperSheet extends BRPItemSheetV2 {
 
   //View an item in the main list
   async _onItemView(event) {
-    const target = $(event.currentTarget).closest('.item')
-    const itemId = target.data('item-id')
+    const target = event.currentTarget.closest('.item')
+    const itemId = target.dataset.itemId
     const item = await fromUuid(itemId)
     item.sheet.render(true);
   }

@@ -3,7 +3,7 @@
   <div class="bold">{{localize 'BRP.gmNotes'}}</div>
   {{! Editor for description}}
   <div class="description-doc">
-     <prose-mirror name="system.gmDescription" data-document-u-u-i-d="{{item.uuid}}" value="{{system.gmDescription}}" collaborate="true" toggled="true">
+     <prose-mirror name="system.gmDescription" value="{{system.gmDescription}}" editable="{{editable}}" toggled="false">
         {{{enrichedGMDescription}}}
       </prose-mirror>
   </div>

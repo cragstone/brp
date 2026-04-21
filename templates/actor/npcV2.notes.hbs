@@ -3,8 +3,7 @@
   <div class=" charname">{{localize 'BRP.notes'}}:</div>
   <div class="npc-description-doc">
     {{#if editable}}
-      <prose-mirror name="system.extDesc" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.extDesc}}"
-        collaborate="true" toggled="true">
+      <prose-mirror name="system.extDesc" value="{{system.extDesc}}" editable="{{editable}}" toggled="false">
         {{{extDescValue}}}
       </prose-mirror>
     {{else}}
