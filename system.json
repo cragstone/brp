@@ -1,0 +1,91 @@
+{
+  "id": "brp",
+  "title": "Basic Role Playing",
+  "description": "Basic Role Playing system for FoundryVTT!",
+  "version": "13.56",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13.351",
+    "maximum": "13"
+  },
+  "authors": [
+    {
+      "name": "Dangermouse",
+      "flags": {}
+    },
+    {
+      "name": "JamesB",
+      "flags": {}
+    }
+  ],
+  "esmodules": [
+    "module/brp.mjs",
+    "module/setup/load.mjs"
+  ],
+  "styles": [
+    "css/brp.css",
+    "css/npc.css"
+  ],
+  "packs": [
+    {
+      "label": "BRP ID Macros",
+      "type": "Macro",
+      "name": "brp-id-macros",
+      "path": "packs/brp-id-macros",
+      "system": "brp",
+      "flags": {},
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json",
+      "flags": {}
+    },
+    {
+      "lang": "es",
+      "name": "Español (Spanish)",
+      "path": "lang/es.json"
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    }
+  ],
+  "grid": {
+    "units": "m"
+  },
+  "media": [
+    {
+      "type": "setup",
+      "url": "systems/brp/assets/brp-logo-powered_by-solid.png",
+      "thumbnail": "systems/brp/assets/brp-logo-powered_by-solid.png",
+      "loop": false,
+      "flags": {}
+    }
+  ],
+  "documentTypes": {
+    "RegionBehavior": {
+      "ChaosiumCanvasInterfaceAmbientLightToggle": {},
+      "ChaosiumCanvasInterfaceDrawingToggle": {},
+      "ChaosiumCanvasInterfaceMapPinToggle": {},
+      "ChaosiumCanvasInterfaceOpenDocument": {},
+      "ChaosiumCanvasInterfacePlaySound": {},
+      "ChaosiumCanvasInterfaceToScene": {},
+      "ChaosiumCanvasInterfaceTileToggle": {}
+    }
+  },
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": "power",
+  "socket": true,
+  "manifest": "https://github.com/cragstone/brp/releases/latest/download/system.json",
+  "download": "https://github.com/cragstone/brp/releases/download/13.56/BRP.zip",
+  "license": "LICENSE.txt",
+  "changelog": "CHANGELOG.md"
+}
