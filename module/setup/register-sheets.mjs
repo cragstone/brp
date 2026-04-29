@@ -20,8 +20,7 @@ import { BRPAllegianceSheet } from '../item/sheets/allegiance.mjs'
 import { BRPPassionSheet } from '../item/sheets/passion.mjs'
 import { BRPPersTraitSheet } from '../item/sheets/persTrait.mjs'
 import { BRPReputationSheet } from '../item/sheets/reputation.mjs'
-import { BRPRollTableConfig } from '../sheets/brp-roll-table-config.mjs'
-import { BRPJournalSheet } from '../sheets/brp-journal-sheet.mjs'
+//import { BRPRollTableConfig } from '../sheets/brp-roll-table-config.mjs'
 import { BRPSkillCategory } from '../item/sheets/skillcat.mjs'
 import { BRPCultureSheet } from '../item/sheets/culture.mjs'
 
@@ -155,13 +154,8 @@ export function registerSheets() {
     makeDefault: true
   })
 
-  foundry.documents.collections.RollTables.unregisterSheet('core', foundry.applications.sheets.RollTableSheet)
-  foundry.documents.collections.RollTables.registerSheet('brp', BRPRollTableConfig, {
-    makeDefault: true
-  })
-
-  foundry.documents.collections.Journal.unregisterSheet('core', foundry.appv1.sheets.JournalSheet)
-  foundry.documents.collections.Journal.registerSheet('brp', BRPJournalSheet, {
-    makeDefault: true
-  })
+//  foundry.documents.collections.RollTables.unregisterSheet('core', foundry.applications.sheets.RollTableSheet)
+//  foundry.documents.collections.RollTables.registerSheet('brp', BRPRollTableConfig, {
+//    makeDefault: true
+//  })
 }

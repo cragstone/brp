@@ -1,5 +1,8 @@
 # CHANGE LOG
 
+## 14.2
+- Update BRPID for Journals and Roll Tables  - show work and be visible now.
+
 ## 14.1
 - This is all the work of RevCivic - thank you for this
 - Updated for FoundryVTT Version 14 compatibility

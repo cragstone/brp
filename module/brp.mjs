@@ -13,6 +13,7 @@ import RenderJournalEntrySheet from './hooks/render-journal-entry-sheet.mjs'
 import createToken from "./hooks/create-token.mjs";
 import { BRPSelectLists } from "./apps/select-lists.mjs";
 import { updateWorld } from "./setup/update.mjs";
+import RenderRollTableSheet from "./hooks/render-roll-table-sheet.mjs";
 
 Hooks.once('init', Init);
 
@@ -80,4 +81,6 @@ Hooks.on('createToken', createToken);
 //Add Journal Format Hooks
 Hooks.on('renderJournalEntryPageTextSheet', RenderJournalEntryPageTextSheet)
 Hooks.on('renderJournalEntrySheet', RenderJournalEntrySheet)
+
+Hooks.on('renderRollTableSheet', RenderRollTableSheet);
 
