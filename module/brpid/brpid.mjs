@@ -475,6 +475,7 @@ export class BRPID {
   }
 
   static get gamePropertyLookup () {
+
     return {
       a: 'actors',
       c: 'cards',

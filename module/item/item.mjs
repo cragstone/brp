@@ -167,7 +167,11 @@ export class BRPItem extends Item {
       if (game.settings.get('brp', "itemBRPID")) {
         let tempID = await BRPID.guessId(item)
         if (tempID) {
-          await item.update({ 'flags.brp.brpidFlag.id': tempID })
+          await item.update({ 
+            'flags.brp.brpidFlag.id': tempID,
+            'flags.brp.brpidFlag.lang': game.i18n.lang,
+            'flags.brp.brpidFlag.priority': 0
+          })
           item.sheet.element?.querySelectorAll('header.window-header a.header-button.edit-brpid-warning, header.window-header a.header-button.edit-brpid-exisiting').forEach(el => {
             el.style.color = tempID ? 'orange' : 'red'
           })

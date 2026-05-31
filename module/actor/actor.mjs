@@ -608,7 +608,11 @@ export class BRPActor extends Actor {
     if (game.settings.get('brp', "actorBRPID")) {
       let tempID = await BRPID.guessId(actor)
       if (tempID) {
-        await actor.update({ 'flags.brp.brpidFlag.id': tempID })
+        await actor.update({ 
+          'flags.brp.brpidFlag.id': tempID 
+          'flags.brp.brpidFlag.lang': game.i18n.lang,
+          'flags.brp.brpidFlag.priority': 0
+        })
         actor.sheet.element?.querySelectorAll('header.window-header a.header-button.edit-brpid-warning, header.window-header a.header-button.edit-brpid-exisiting').forEach(el => {
           el.style.color = tempID ? 'orange' : 'red'
         })

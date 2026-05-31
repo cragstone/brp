@@ -1,5 +1,10 @@
 # CHANGE LOG
 
+## 14.3
+- When the system creates items/ators and you've chosen for the BRPID to be autocreated it will now use the game language and set the priority to 0.
+- Selected language on the BRPID Editor sheet should now show properly (rather than always showing English)
+- Skill category list now has a "blank" entry to show no skill category has been selected in a skill (rather than it defaulting to first item in list if not selected)
+
 ## 14.2
 - Update BRPID for Journals and Roll Tables  - show work and be visible now.
 
