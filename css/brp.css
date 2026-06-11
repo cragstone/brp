@@ -890,8 +890,8 @@ body.theme-dark .application.brp.sheet,
 }
 
 .brp .skillsDev-list {
-  display: flex;
-  flex-wrap: wrap;
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
   margin: 0;
   padding: 0;
   height: calc(100% - 20px);
@@ -1795,4 +1795,8 @@ form .file-form-group-stacked {
     &.broken {
       text-decoration: line-through;
     }
+}
+
+.brp.dialog.item .window-content {
+  overflow-y:auto;
 }

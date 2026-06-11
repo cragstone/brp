@@ -15,13 +15,13 @@
         </a>
       </div>
     </div>
-    <br>
+
     {{! Skill List by Category}}
     {{#if system.skillOrder}}
       {{#each skills as |skill id|}}
         <li class="item skill-listitem" data-item-id="{{skill._id}}" data-document-class='Item' data-drag='true'>
           {{#if isType}}
-            {{#unless (eq skill.count 0)}}
+            {{#unless (eq skill.counter 0)}}
             <br>
             {{/unless}}
               <div class="item-edit item-name" style="grid-column: 1 / 4">
@@ -61,7 +61,7 @@
       {{#each skillsAlpha as |aSkill id|}}
         <li class="item skill-listitem" data-item-id="{{aSkill._id}}" data-document-class='Item' data-drag='true'>
           {{#if isType}}
-            {{#unless (eq aSkill.count 0)}}
+            {{#unless (eq aSkill.counter 0)}}
              <br>
             {{/unless}}
             <div class="item-edit item-name" style="grid-column: 1 / 4">

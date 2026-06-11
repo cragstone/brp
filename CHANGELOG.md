@@ -1,5 +1,10 @@
 # CHANGE LOG
 
+## 14.5
+- Chaosium Canvas Interface updated for V14 layers (thanks to James B)
+- A few CSS tweaks for Skills List on character sheet
+- Skill selection list when adding a profession now has a scroll bar
+
 ## 14.4
 - Hotfix for a missing comma in actor.mjs
 

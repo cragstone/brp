@@ -3,7 +3,8 @@ import { BRPID } from '../brpid/brpid.mjs'
 import { BRPActor } from '../actor/actor.mjs'
 import { BRPItem } from '../item/item.mjs'
 import { BRP } from "../setup/config.mjs";
-import ChaosiumCanvasInterfaceInit from '../apps/chaosium-canvas-interface-init.mjs'
+//import ChaosiumCanvasInterfaceInit from '../apps/chaosium-canvas-interface-init.mjs'
+import BRPClickableEvents from '../apps/clickable-events.mjs';
 import { registerSettings } from '../settings/register-settings.mjs'
 import { handlebarsHelper } from '../setup/handlebar-helper.mjs';
 import { BRPCombat } from "../combat/combat.mjs";
@@ -18,8 +19,14 @@ export default function Init() {
     BRPItem,
     rollItemMacro,
     rollCharMacro,
-    ClickRegionLeftUuid: ChaosiumCanvasInterfaceInit.ClickRegionLeftUuid,
-    ClickRegionRightUuid: ChaosiumCanvasInterfaceInit.ClickRegionRightUuid
+    ClickRegionLeftUuid: BRPClickableEvents.ClickRegionLeftUuid,
+    ClickRegionRightUuid: BRPClickableEvents.ClickRegionRightUuid,
+    hasPermissionDocument: BRPClickableEvents.hasPermissionDocument,
+    InSceneRelativeTeleport: BRPClickableEvents.InSceneRelativeTeleport,
+    MapPinToggle: BRPClickableEvents.MapPinToggle,
+    openDocument: BRPClickableEvents.openDocument,
+    toggleTileJournalPages: BRPClickableEvents.toggleTileJournalPages,
+    toScene: BRPClickableEvents.toScene,
   };
   //Add Custom Configuration
   CONFIG.BRP = BRP;
@@ -36,7 +43,7 @@ export default function Init() {
   CONFIG.ActiveEffect.documentClass = BRPActiveEffect;
 
 
-  ChaosiumCanvasInterfaceInit.initSelf()
+  BRPClickableEvents.initSelf()
   BRPID.init()
   registerSheets()
 
