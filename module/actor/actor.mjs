@@ -758,4 +758,12 @@ export class BRPActor extends Actor {
     }
     return dmgBonus
   }
+
+  static migrateData (source) {
+    // Remove persisted data
+    if (typeof source.system?.skillcategory === 'object') {
+      delete source.system.skillcategory
+    }
+    return super.migrateData(source)
+  }
 }

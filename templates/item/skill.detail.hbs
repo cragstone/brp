@@ -11,18 +11,6 @@
       {{else}}
         <div class="stat-display boxed">{{catName}}</div>
       {{/if}}
-
-      {{#if (eq item.system.category 'zcmbtmod')}}
-        {{#if isGM}}
-          <div class="stat-input centre">
-            <select class="centre" style="height: 100%;" data-handle-change name="system.subType">
-              {{selectOptions wpnOptions selected=item.system.subType}}
-            </select>
-          </div>
-        {{else}}
-          <div class="stat-display boxed">{{wpnType}}</div>
-        {{/if}}
-      {{/if}}
     </div>
     <br>
   {{/unless}}
