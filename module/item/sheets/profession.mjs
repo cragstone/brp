@@ -43,8 +43,8 @@ export class BRPProfessionSheet extends BRPItemSheetV2 {
     let context = await super._prepareContext(options)
     const actor = this.item.parent
     const itemData = context.item
-    context.minWealthOptions = await BRPSelectLists.getWealthOptions(0, 4)
-    context.maxWealthOptions = await BRPSelectLists.getWealthOptions(itemData.system.minWealth, 4)
+    context.minWealthOptions = BRPSelectLists.getWealthOptions(0, 4)
+    context.maxWealthOptions = BRPSelectLists.getWealthOptions(itemData.system.minWealth, 4)
     context.minWealth = game.i18n.localize("BRP.wealthLevel." + this.item.system.minWealth)
     context.maxWealth = game.i18n.localize("BRP.wealthLevel." + this.item.system.maxWealth)
 

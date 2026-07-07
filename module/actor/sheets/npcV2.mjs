@@ -310,7 +310,7 @@ export class BRPNPCSheetV2 extends BRPActorSheetV2 {
     //Get Power Type
     async _selectPower() {
       let data = ""
-      let catOptions = await BRPSelectLists.getPowerCatOptions();
+      let catOptions = BRPSelectLists.getPowerCatOptions();
       data = {
         catOptions,
       }

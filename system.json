@@ -73,145 +73,31 @@
   "documentTypes": {
     "Actor": {
       "character": {},
-      "npc": {
-        "htmlFields": [
-          "description"
-        ]
-      }
+      "npc": {}
     },
     "Item": {
-      "gear": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "skill": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "hit-location": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "personality": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "profession": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "power": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "magic": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "mutation": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "psychic": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "sorcery": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "super": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "failing": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "powerMod": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "armour": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "weapon": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "wound": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "allegiance": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "passion": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "persTrait": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "reputation": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "skillcat": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      },
-      "culture": {
-        "htmlFields": [
-          "description",
-          "gmNotes"
-        ]
-      }
+      "gear": {},
+      "skill": {},
+      "hit-location": {},
+      "personality": {},
+      "profession": {},
+      "power": {},
+      "magic": {},
+      "mutation": {},
+      "psychic": {},
+      "sorcery": {},
+      "super": {},
+      "failing": {},
+      "powerMod": {},
+      "armour": {},
+      "weapon": {},
+      "wound": {},
+      "allegiance": {},
+      "passion": {},
+      "persTrait": {},
+      "reputation": {},
+      "skillcat": {},
+      "culture": {}
     },
     "RegionBehavior": {
       "ChaosiumCanvasInterfaceAmbientLightToggle": {},

@@ -80,7 +80,7 @@ export class BRPCombatRuleSettings extends HandlebarsApplicationMixin(Applicatio
   async _prepareContext(options) {
     const isGM = game.user.isGM;
     const optSet = {}
-    optSet.initChoiceList = await BRPSelectLists.getStatOptions();
+    optSet.initChoiceList = BRPSelectLists.getStatOptions();
     optSet.initRoundList = {
       "no": game.i18n.localize('BRP.no'),
       "manual": game.i18n.localize('BRP.manual'),

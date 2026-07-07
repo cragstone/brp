@@ -43,14 +43,13 @@ export class BRPSkillSheet extends BRPItemSheetV2 {
       }
     }
     //Get drop down options from select-lists.mjs
-    context.statOptions = await BRPSelectLists.getStatOptions();
+    context.statOptions = BRPSelectLists.getStatOptions();
     context.catOptions = await BRPSelectLists.getCategoryOptions();
-    context.wpnOptions = await BRPSelectLists.getWpnCategoryOptions();
-    context.funcOptions = await BRPSelectLists.getFunctionalOptions();
+    context.wpnOptions = BRPSelectLists.getWpnCategoryOptions();
+    context.funcOptions = BRPSelectLists.getFunctionalOptions();
     context.stat1 = game.i18n.localize(CONFIG.BRP.statsAbbreviations[this.item.system.baseFormula[1].stat]);
     context.stat2 = game.i18n.localize(CONFIG.BRP.statsAbbreviations[this.item.system.baseFormula[2].stat]);
     context.catName = game.i18n.localize("BRP." + this.item.system.category.split('.')[2]);
-    context.wpnType = game.i18n.localize("BRP." + this.item.system.subType);
     context.funcDisp = game.i18n.localize("BRP." + this.item.system.baseFormula.Func);
     itemData.system.total = itemData.system.base + itemData.system.xp + itemData.system.effects + itemData.system.personality + itemData.system.profession + itemData.system.personal + itemData.system.culture;
     //Ensure mainName is populated

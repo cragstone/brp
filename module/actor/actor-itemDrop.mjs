@@ -431,7 +431,7 @@ export class BRPactorItemDrop {
 
     //If a profession then select wealth level
     if (itm.type === 'profession' && game.settings.get('brp','useWealth')) {
-      let wealthOptions = await BRPSelectLists.getWealthOptions(itm.system.minWealth, itm.system.maxWealth)
+      let wealthOptions = BRPSelectLists.getWealthOptions(itm.system.minWealth, itm.system.maxWealth)
       let selected = await this.selectFromRadio(wealthOptions, "Select Wealth Level")
       await actor.update({ 'system.wealth': selected })
     }

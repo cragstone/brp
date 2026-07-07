@@ -33,7 +33,7 @@ export class BRPMutationSheet extends BRPItemSheetV2 {
       context.itemType = game.settings.get('brp', this.item.type + 'Label')
     }
     //Get drop down options from select-lists.mjs
-    context.catOptions = await BRPSelectLists.getMutationCatOptions();
+    context.catOptions = BRPSelectLists.getMutationCatOptions();
     context.catName = game.i18n.localize("BRP." + this.item.system.impact);
     context.skillCatOptions = await BRPSelectLists.getCategoryOptions();
     context.tabs = this._getTabs(options.parts);

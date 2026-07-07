@@ -1,5 +1,5 @@
   <section class="npc-main-sheet">
-    {{#if (eq system.viewTab "1")}}
+    {{#if (eq system.viewTab 1)}}
 
     <setion class="npc-main-grid">
       {{!-- Stats Section --}}
@@ -69,12 +69,10 @@
         {{#unless system.lock}}
         <div><input class="npcpersonal-inp" name="system.moveTitle" type="text"
             value="{{actor.system.moveTitle}}" /></div>
-        <div><input class="npcpersonal-inp centre" name="system.move" type="text"
-            value="{{actor.system.move}}" /></div>
+        <div><input class="npcpersonal-inp centre" name="system.move" type="number" value="{{actor.system.move}}" /></div>
         <div><input class="npcpersonal-inp" name="system.altMoveTitle" type="text"
             value="{{actor.system.altMoveTitle}}" /></div>
-        <div><input class="npcpersonal-inp centre" name="system.altMove" type="text"
-            value="{{actor.system.altMove}}" /></div>
+        <div><input class="npcpersonal-inp centre" name="system.altMove" type="number" value="{{actor.system.altMove}}" /></div>
         {{else}}
         <div class="charname">{{system.moveTitle}}</div>
         <div class="centre">{{system.move}}</div>

@@ -226,7 +226,7 @@ export class BRPCharacterSheet extends BRPActorSheetV2 {
     context.usePersTrait = game.settings.get('brp', 'usePersTrait');
     context.useReputation = game.settings.get('brp', 'useReputation');
     context.wealthName = actorData.system.wealth
-    context.wealthOptions = await BRPSelectLists.getWealthOptions(0, 4)
+    context.wealthOptions = BRPSelectLists.getWealthOptions(0, 4)
     if (actorData.system.wealth >= 0 && actorData.system.wealth <= 4 && actorData.system.wealth != "") {
       context.wealthName = game.i18n.localize('BRP.wealthLevel.' + actorData.system.wealth)
     }

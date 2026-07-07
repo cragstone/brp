@@ -40,14 +40,14 @@ export class BRPWeaponSheet extends BRPItemSheetV2 {
     }
     let skillSelect = "";
     //Get drop down options from select-lists.mjs
-    context.priceOptions = await BRPSelectLists.getPriceOptions();
-    context.equippedOptions = await BRPSelectLists.getEquippedOptions(this.document.type);
+    context.priceOptions = BRPSelectLists.getPriceOptions();
+    context.equippedOptions = BRPSelectLists.getEquippedOptions(this.document.type);
     context.priceName = game.i18n.localize("BRP." + this.item.system.price);
     context.equippedName = game.i18n.localize("BRP." + this.item.system.equipStatus);
-    context.weaponOptions = await BRPSelectLists.getWpnCategoryOptions();
-    context.damOptions = await BRPSelectLists.getDamBonusOptions();
-    context.specialOptions = await BRPSelectLists.getSpecialOptions();
-    context.handedOptions = await BRPSelectLists.getHandedOptions();
+    context.weaponOptions = BRPSelectLists.getWpnCategoryOptions();
+    context.damOptions = BRPSelectLists.getDamBonusOptions();
+    context.specialOptions = BRPSelectLists.getSpecialOptions();
+    context.handedOptions = BRPSelectLists.getHandedOptions();
     context.wpnSkillOptions1 = await BRPSelectLists.getWeaponSkillOptions("1");
     context.wpnSkillOptions2 = await BRPSelectLists.getWeaponSkillOptions(this.item.system.skill1);
     context.weaponCatName = game.i18n.localize("BRP." + this.item.system.weaponType);

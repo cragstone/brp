@@ -43,7 +43,7 @@ export class BRPPsychicSheet extends BRPItemSheetV2 {
         context.pcOwner = true
       }
     }
-    context.catOptions = await BRPSelectLists.getSpellCatOptions();
+    context.catOptions = BRPSelectLists.getSpellCatOptions();
     context.catName = game.i18n.localize("BRP." + this.item.system.impact);
     context.skillCatOptions = await BRPSelectLists.getCategoryOptions();
     const itemData = context.item

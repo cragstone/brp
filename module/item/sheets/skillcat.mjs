@@ -31,16 +31,16 @@ export class BRPSkillCategory extends BRPItemSheetV2 {
     let context = await super._prepareContext(options)
 
     //Get drop down options from select-lists.mjs
-    context.statOptions = await BRPSelectLists.addStatOptions();
+    context.statOptions = BRPSelectLists.addStatOptions();
     context.statName = game.i18n.localize(CONFIG.BRP.statsAbbreviations[this.item.system.stat]);
-    context.advStatOptionsStr = await BRPSelectLists.getAdvSkillCatOptions();
-    context.advStatOptionsCon = await BRPSelectLists.getAdvSkillCatOptions();
-    context.advStatOptionsInt = await BRPSelectLists.getAdvSkillCatOptions();
-    context.advStatOptionsSiz = await BRPSelectLists.getAdvSkillCatOptions();
-    context.advStatOptionsPow = await BRPSelectLists.getAdvSkillCatOptions();
-    context.advStatOptionsDex = await BRPSelectLists.getAdvSkillCatOptions();
-    context.advStatOptionsCha = await BRPSelectLists.getAdvSkillCatOptions();
-    context.advStatOptionsEdu = await BRPSelectLists.getAdvSkillCatOptions();
+    context.advStatOptionsStr = BRPSelectLists.getAdvSkillCatOptions();
+    context.advStatOptionsCon = BRPSelectLists.getAdvSkillCatOptions();
+    context.advStatOptionsInt = BRPSelectLists.getAdvSkillCatOptions();
+    context.advStatOptionsSiz = BRPSelectLists.getAdvSkillCatOptions();
+    context.advStatOptionsPow = BRPSelectLists.getAdvSkillCatOptions();
+    context.advStatOptionsDex = BRPSelectLists.getAdvSkillCatOptions();
+    context.advStatOptionsCha = BRPSelectLists.getAdvSkillCatOptions();
+    context.advStatOptionsEdu = BRPSelectLists.getAdvSkillCatOptions();
     context.skillCatNameStr = game.i18n.localize('BRP.advSkillCat.' + this.item.system.attrib.str)
     context.skillCatNameCon = game.i18n.localize('BRP.advSkillCat.' + this.item.system.attrib.con)
     context.skillCatNameInt = game.i18n.localize('BRP.advSkillCat.' + this.item.system.attrib.int)

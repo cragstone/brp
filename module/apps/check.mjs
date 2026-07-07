@@ -500,7 +500,7 @@ export class BRPCheck {
   //Function to call the Difficulty & Modifier Dialog box
   static async RollDialog(options) {
     let data = ""
-    const addStatOptions = await BRPSelectLists.addStatOptions(options.characteristic)
+    const addStatOptions = BRPSelectLists.addStatOptions()
     const difficultyOptions = await BRPSelectLists.getDifficultyOptions()
     switch (options.rollType) {
       case 'DM':

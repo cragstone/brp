@@ -117,7 +117,7 @@ export class BRPActorSheetV2 extends api.HandlebarsApplicationMixin(sheets.Actor
       useAVRand: game.settings.get('brp', 'useAVRand'),
       useReputation: game.settings.get('brp', 'useReputation'),
       useBeastiary: game.settings.get('brp', 'beastiary'),
-      statOptions: await BRPSelectLists.addStatOptions(""),
+      statOptions: BRPSelectLists.addStatOptions(),
     };
   }
 

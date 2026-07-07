@@ -32,9 +32,9 @@ export class BRPPowerSheet extends BRPItemSheetV2 {
   async _prepareContext(options) {
     let context = await super._prepareContext(options)
     context.headerDisplay = true;
-    context.catOptions = await BRPSelectLists.getPowerCatOptions();
+    context.catOptions = BRPSelectLists.getPowerCatOptions();
     context.catName = game.i18n.localize("BRP." + this.item.system.category);
-    context.lvlOptions = await BRPSelectLists.getPowerLvlOptions();
+    context.lvlOptions = BRPSelectLists.getPowerLvlOptions();
     context.lvlName = game.i18n.localize("BRP." + this.item.system.level);
     context.tabs = this._getTabs(options.parts);
     return context

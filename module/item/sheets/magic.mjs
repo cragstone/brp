@@ -33,7 +33,7 @@ export class BRPMagicSheet extends BRPItemSheetV2 {
       context.itemType = game.settings.get('brp', this.item.type + 'Label')
     }
     //Get drop down options from select-lists.mjs
-    context.catOptions = await BRPSelectLists.getSpellCatOptions();
+    context.catOptions = BRPSelectLists.getSpellCatOptions();
     context.catName = game.i18n.localize("BRP." + this.item.system.impact);
     context.skillCatOptions = await BRPSelectLists.getCategoryOptions();
     const itemData = context.item

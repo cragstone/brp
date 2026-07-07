@@ -1,7 +1,7 @@
 export class BRPSelectLists {
 
   //Attribute List
-  static async getStatOptions() {
+  static getStatOptions() {
     let options = {
       "fixed": game.i18n.localize("BRP.fixed"),
       "str": game.i18n.localize("BRP.StatsStrAbbr"),
@@ -17,7 +17,7 @@ export class BRPSelectLists {
   }
 
   //Additional Attribute List
-  static async addStatOptions(characteristic) {
+  static addStatOptions(allOptions = false) {
     let options = {
       "none": game.i18n.localize("BRP.none"),
       "str": game.i18n.localize("BRP.StatsStrAbbr"),
@@ -28,7 +28,7 @@ export class BRPSelectLists {
       "dex": game.i18n.localize("BRP.StatsDexAbbr"),
       "cha": game.i18n.localize("BRP.StatsChaAbbr"),
     }
-    if (game.settings.get('brp', 'useEDU')) {
+    if (allOptions || game.settings.get('brp', 'useEDU')) {
       options = Object.assign(options, { 'edu': game.i18n.localize("BRP.StatsEduAbbr") })
     }
     return options;
@@ -58,7 +58,7 @@ export class BRPSelectLists {
   }
 
   //Weapon Category List
-  static async getWpnCategoryOptions() {
+  static getWpnCategoryOptions() {
     let options = {
       "artillery": game.i18n.localize("BRP.artillery"),
       "energy": game.i18n.localize("BRP.energy"),
@@ -73,7 +73,7 @@ export class BRPSelectLists {
   }
 
   //Dam Bonus Category List
-  static async getDamBonusOptions() {
+  static getDamBonusOptions() {
     let options = {
       "none": game.i18n.localize("BRP.none"),
       "half": game.i18n.localize("BRP.half"),
@@ -86,7 +86,7 @@ export class BRPSelectLists {
   }
 
   //Special Success  Category List
-  static async getSpecialOptions() {
+  static getSpecialOptions() {
     let options = {
       "none": game.i18n.localize("BRP.none"),
       "bleed": game.i18n.localize("BRP.bleed"),
@@ -103,7 +103,7 @@ export class BRPSelectLists {
   }
 
   //Funcational Options List
-  static async getFunctionalOptions() {
+  static getFunctionalOptions() {
     let options = {
       "and": game.i18n.localize("BRP.and"),
       "or": game.i18n.localize("BRP.or"),
@@ -112,7 +112,7 @@ export class BRPSelectLists {
   }
 
   //Advanced Skill Category Options List
-  static async getAdvSkillCatOptions() {
+  static getAdvSkillCatOptions() {
     let options = {
       "0": game.i18n.localize("BRP.advSkillCat.0"),
       "1": game.i18n.localize("BRP.advSkillCat.1"),
@@ -137,7 +137,7 @@ export class BRPSelectLists {
   }
 
   //Powers Category List
-  static async getPowerCatOptions() {
+  static getPowerCatOptions() {
     let options = {
       "magic": game.i18n.localize("BRP.magic"),
       "mutation": game.i18n.localize("BRP.mutation"),
@@ -149,7 +149,7 @@ export class BRPSelectLists {
   }
 
   //Power Level List
-  static async getPowerLvlOptions() {
+  static getPowerLvlOptions() {
     let options = {
       "normal": game.i18n.localize("BRP.normal"),
       "epic": game.i18n.localize("BRP.epic"),
@@ -160,7 +160,7 @@ export class BRPSelectLists {
   }
 
   //Spell Category List
-  static async getSpellCatOptions() {
+  static getSpellCatOptions() {
     let options = {
       "damage": game.i18n.localize("BRP.damage"),
       "healing": game.i18n.localize("BRP.healing"),
@@ -170,7 +170,7 @@ export class BRPSelectLists {
   }
 
   //Mutation Category List
-  static async getMutationCatOptions() {
+  static getMutationCatOptions() {
     let options = {
       "adv": game.i18n.localize("BRP.adv"),
       "dis": game.i18n.localize("BRP.dis"),
@@ -179,7 +179,7 @@ export class BRPSelectLists {
   }
 
   //Armour Burden List
-  static async getArmourBurdenOptions() {
+  static getArmourBurdenOptions() {
     let options = {
       "none": game.i18n.localize("BRP.none"),
       "light": game.i18n.localize("BRP.light"),
@@ -190,7 +190,7 @@ export class BRPSelectLists {
   }
 
   //Price Categories List
-  static async getPriceOptions() {
+  static getPriceOptions() {
     let options = {
       "none": game.i18n.localize("BRP.none"),
       "cheap": game.i18n.localize("BRP.cheap"),
@@ -222,7 +222,7 @@ export class BRPSelectLists {
   }
 
   //Equipped List
-  static async getEquippedOptions(type) {
+  static getEquippedOptions(type) {
     let options = {};
     if (type === 'armour') {
       options = {
@@ -269,7 +269,7 @@ export class BRPSelectLists {
   }
 
   //Handed List
-  static async getHandedOptions() {
+  static getHandedOptions() {
     let options = {
       "none": game.i18n.localize("BRP.none"),
       "1H": game.i18n.localize("BRP.1H"),
@@ -314,7 +314,7 @@ export class BRPSelectLists {
   }
 
   //Hit Location List
-  static async getHitLocType() {
+  static getHitLocType() {
     let options = {
       "limb": game.i18n.localize("BRP.limb"),
       "abdomen": game.i18n.localize("BRP.abdomen"),

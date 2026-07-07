@@ -32,14 +32,13 @@ export class BRPGearSheet extends BRPItemSheetV2 {
   async _prepareContext(options) {
     let context = await super._prepareContext(options)
     const actor = this.item.parent
-    context.burdenOptions = await BRPSelectLists.getArmourBurdenOptions();
-    context.priceOptions = await BRPSelectLists.getPriceOptions();
+    context.burdenOptions = BRPSelectLists.getArmourBurdenOptions();
+    context.priceOptions = BRPSelectLists.getPriceOptions();
     if (actor) {
       context.hitLocOptions = await BRPSelectLists.getHitLocOptions(actor);
     };
-    context.equippedOptions = await BRPSelectLists.getEquippedOptions(this.document.type);
+    context.equippedOptions = BRPSelectLists.getEquippedOptions(this.document.type);
     context.priceName = game.i18n.localize("BRP." + this.item.system.price);
-    context.priceOptions = await BRPSelectLists.getPriceOptions();
     context.effects = BRPActiveEffectSheet.getItemEffectsFromSheet(this.document)
     const changesActiveEffects = BRPActiveEffectSheet.getEffectChangesFromSheet(this.document)
     context.effectKeys = changesActiveEffects.effectKeys

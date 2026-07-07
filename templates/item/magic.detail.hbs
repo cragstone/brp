@@ -34,7 +34,7 @@
       <div class="skill-display">{{ localize "BRP.duration" }}</div>
       <div class="stat-input"><input name="system.duration" type="text" value="{{item.system.duration}}" /></div>
       <div class="skill-display">{{ localize "BRP.cost" }}</div>
-      <div class="stat-input"><input name="system.pppl" type="text" value="{{item.system.pppl}}" /></div>
+      <div class="stat-input"><input name="system.pppl" type="number" value="{{item.system.pppl}}" /></div>
       {{#unless (eq item.system.impact 'other')}}
         <div class="skill-display">{{#if (eq item.system.impact 'damage')}} {{ localize "BRP.damage" }} {{else}} {{ localize
           "BRP.healing" }} {{/if}}</div>

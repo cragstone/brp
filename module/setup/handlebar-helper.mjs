@@ -44,8 +44,4 @@ export const handlebarsHelper = function () {
     return outStr;
   });
 
-  Handlebars.registerHelper('toLowerCase', function (str) {
-    return str.toLowerCase();
-  });
-
 }

@@ -30,7 +30,7 @@ export class BRPHitLocSheet extends BRPItemSheetV2 {
   async _prepareContext(options) {
     let context = await super._prepareContext(options)
     context.headerDisplay = true;
-    context.locTypeOptions = await BRPSelectLists.getHitLocType();
+    context.locTypeOptions = BRPSelectLists.getHitLocType();
     context.hitLocName = game.i18n.localize('BRP.' + this.item.system.locType)
     context.tabs = this._getTabs(options.parts);
     return context
