@@ -60,7 +60,7 @@ export default class BRPItemWeaponModel extends BRPItemModel {
   }
 
   static migrateData (source) {
-    if (source.db.toString() === '0') {
+    if (source.db?.toString() === '0') {
       source.db = 'none'
     }
     return super.migrateData(source)

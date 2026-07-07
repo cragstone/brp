@@ -11,7 +11,7 @@ export default class BRPItemSuperModel extends BRPItemModel {
           brpid: new fields.StringField({ }),
         }),
       ),
-      cpc: new fields.StringField({ initial: 1 }),
+      cpc: new fields.StringField({ initial: '1' }),
       cpcSpent: new fields.NumberField({ ...BRPItemModel.requiredInteger }),
       level: new fields.NumberField({ ...BRPItemModel.requiredInteger, initial: 1 }),
       range: new fields.StringField({ }),
