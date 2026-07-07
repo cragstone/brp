@@ -1,5 +1,9 @@
 # CHANGE LOG
 
+## 14.7
+- Moved to Data Models - huge thanks to JamesB for doing this.
+- PLEASE BACK UP YOUR WORLDS BEFORE MIGRATING
+
 ## 14.6
 - There's a help icon on the character sheet and on the GM tools that open's the system Wiki from Github in a browser window.
 
