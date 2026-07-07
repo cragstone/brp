@@ -6,6 +6,7 @@ import { BRPUtilities } from "./apps/utilities.mjs"
 import { BRPMenu } from "./setup/menu.mjs"
 import * as Chat from "./apps/chat.mjs";
 import Init from './hooks/init.mjs';
+import RenderActiveEffectConfig from './hooks/render-active-effect-config.mjs'
 import renderSceneControls from "./hooks/render-scene-controls.mjs"
 import RenderRegionConfig from './hooks/render-region-config.mjs'
 import RenderJournalEntryPageTextSheet from './hooks/render-journal-entry-page-text-sheet.mjs'
@@ -84,3 +85,4 @@ Hooks.on('renderJournalEntrySheet', RenderJournalEntrySheet)
 
 Hooks.on('renderRollTableSheet', RenderRollTableSheet);
 
+Hooks.on('renderActiveEffectConfig', RenderActiveEffectConfig);

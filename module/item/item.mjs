@@ -167,7 +167,7 @@ export class BRPItem extends Item {
       if (game.settings.get('brp', "itemBRPID")) {
         let tempID = await BRPID.guessId(item)
         if (tempID) {
-          await item.update({ 
+          await item.update({
             'flags.brp.brpidFlag.id': tempID,
             'flags.brp.brpidFlag.lang': game.i18n.lang,
             'flags.brp.brpidFlag.priority': 0
@@ -188,16 +188,6 @@ export class BRPItem extends Item {
     if (!types) types = this.TYPES.filter(type => !invalid.includes(type));
     else types = types.filter(type => !invalid.includes(type));
     return super.createDialog(data, createOptions, { types, ...options });
-  }
-
-  async _preDelete(options, user) {
-    if (this.parent) {
-      const ids = this.parent.effects.filter(e => e.origin === this.uuid).map(e => e.id)
-      if (ids.length) {
-        await this.parent.deleteEmbeddedDocuments('ActiveEffect', ids)
-      }
-    }
-    return super._preDelete(options, user);
   }
 
   /** @override */
