@@ -95,22 +95,24 @@ export class BRPActor extends Actor {
           for (let [key, value] of Object.entries(itm.system.attrib)) {
             if (key === 'edu' && !game.settings.get('brp', 'useEDU')) { continue }
 
+            console.log(key,value)  
             switch (value) {
-              case "0":    //No adjustment
+              case 0:    //No adjustment
                 break;
-              case "1":    //Primary
+              case 1:    //Primary
                 bonus += this._categoryprimary(systemData.stats[key].total)
                 break;
-              case "2":    //Secondary
+              case 2:    //Secondary
                 bonus += this._categorysecondary(systemData.stats[key].total)
                 break;
-              case "3":    //Negative
+              case 3:    //Negative
                 bonus += this._categorynegative(systemData.stats[key].total)
                 break;
-              case "4":    //Negative Secondary
+              case 4:    //Negative Secondary
                 bonus += this._categorynegsec(systemData.stats[key].total)
                 break;
             }
+            
           }
         }
         itm.system.bonus = bonus

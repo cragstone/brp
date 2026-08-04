@@ -1,5 +1,9 @@
 # CHANGE LOG
 
+## 14.8
+- Skill Bonuses now correctly calculating
+- Default scene will no longer be blank
+
 ## 14.7
 - Moved to Data Models - huge thanks to JamesB for doing this.
 - PLEASE BACK UP YOUR WORLDS BEFORE MIGRATING
