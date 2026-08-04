@@ -159,7 +159,7 @@ export class BRPCharDev {
 
     chatData = {
       user: game.user.id,
-      type: chatType,
+      //type: chatType,
       content: html,
       speaker: {
         actor: actor._id,

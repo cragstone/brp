@@ -293,7 +293,7 @@ export class BRPActorSheetV2 extends api.HandlebarsApplicationMixin(sheets.Actor
     let chatType = CONST.CHAT_MESSAGE_STYLES.OTHER
     chatData = {
       user: game.user.id,
-      type: chatType,
+      //type: chatType,
       content: html,
       speaker: {
         actor: this.actor._id,

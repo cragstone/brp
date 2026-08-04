@@ -95,7 +95,6 @@ export class BRPActor extends Actor {
           for (let [key, value] of Object.entries(itm.system.attrib)) {
             if (key === 'edu' && !game.settings.get('brp', 'useEDU')) { continue }
 
-            console.log(key,value)  
             switch (value) {
               case 0:    //No adjustment
                 break;

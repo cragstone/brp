@@ -262,7 +262,7 @@ export class BRPUtilities {
     let chatData = {}
     chatData = {
       author: game.user.id,
-      type: chatMsgData.chatType,
+      //type: chatMsgData.chatType,
       content: html,
       speaker: {
         actor,

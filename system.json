@@ -2,7 +2,7 @@
   "id": "brp",
   "title": "Basic Role Playing",
   "description": "Basic Role Playing system for FoundryVTT!",
-  "version": "14.8",
+  "version": "14.9",
   "compatibility": {
     "minimum": "14",
     "verified": "14.365",
@@ -113,7 +113,7 @@
   "secondaryTokenAttribute": "power",
   "socket": true,
   "manifest": "https://github.com/cragstone/brp/releases/latest/download/system.json",
-  "download": "https://github.com/cragstone/brp/releases/download/14.8/brp.zip",
+  "download": "https://github.com/cragstone/brp/releases/download/14.9/brp.zip",
   "license": "LICENSE.txt",
   "changelog": "CHANGELOG.md"
 }
