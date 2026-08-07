@@ -70,10 +70,8 @@ export class BRPWeaponSheet extends BRPItemSheetV2 {
       skillSelect = (await game.system.api.brpid.fromBRPIDBest({ brpid: this.item.system.skill2 }))[0]
       context.skill2Name = skillSelect ? skillSelect.name : "";
     }
-    context.effects = BRPActiveEffectSheet.getItemEffectsFromSheet(this.document)
-    const changesActiveEffects = BRPActiveEffectSheet.getEffectChangesFromSheet(this.document)
-    context.effectKeys = changesActiveEffects.effectKeys
-    context.effectChanges = changesActiveEffects.effectChanges
+    context.effects = BRPActiveEffectSheet.getItemEffectsFromDocument(this.document)
+    context.effectChanges = BRPActiveEffectSheet.getEffectChangesFromDocument(this.document)
     context.tabs = this._getTabs(options.parts);
     return context
   }

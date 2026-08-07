@@ -30,10 +30,8 @@ export class BRPWoundSheet extends BRPItemSheetV2 {
 
   async _prepareContext(options) {
     let context = await super._prepareContext(options)
-    context.effects = BRPActiveEffectSheet.getItemEffectsFromSheet(this.document)
-    const changesActiveEffects = BRPActiveEffectSheet.getEffectChangesFromSheet(this.document)
-    context.effectKeys = changesActiveEffects.effectKeys
-    context.effectChanges = changesActiveEffects.effectChanges
+    context.effects = BRPActiveEffectSheet.getItemEffectsFromDocument(this.document)
+    context.effectChanges = BRPActiveEffectSheet.getEffectChangesFromDocument(this.document)
     context.tabs = this._getTabs(options.parts);
     return context
   }

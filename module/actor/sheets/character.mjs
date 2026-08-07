@@ -314,7 +314,7 @@ export class BRPCharacterSheet extends BRPActorSheetV2 {
     await this._prepareItems(context);
     context.rollData = context.actor.getRollData();
     //Get a List of Active Effects for the Actor
-    context.effects = await BRPActiveEffectSheet.getActorEffectsFromSheet(this.document)
+    context.effects = await BRPActiveEffectSheet.getActorEffectsFromDocument(this.document)
     context.tabs = this._getTabs(options.parts, context);
     return context
   }

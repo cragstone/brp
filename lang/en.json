@@ -1091,7 +1091,13 @@
       "skills": "Skills",
       "social": "Social",
       "statistics": "Char"
-    }
+    },
+    "predefinedActiveEffectKeys": "Predefined Keys",
+    "predefinedActiveEffectKeyHint": "",
+    "direct": "Direct Effect",
+    "effectActor": "Direct Effects",
+    "effectActorHint": "Effects on Actor, rather than via an Item",
+    "clearEffects": "Double click to delete all Direct Effects"
   },
   "TYPES": {
     "Actor": {

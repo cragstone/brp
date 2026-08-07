@@ -70,6 +70,10 @@ export class BRPActorSheetV2 extends api.HandlebarsApplicationMixin(sheets.Actor
       xpRolls: this._onXPRolls,
       powImprove: this._onPowImprove,
       openWiki: this._openWiki,
+      createEffect: this._createEffect,
+      viewActiveEffect: this._viewActiveEffect,
+      toggleEffect: this._toggleEffect,
+      clearEffects: this._clearEffects
     }
   }
 
@@ -873,5 +877,54 @@ export class BRPActorSheetV2 extends api.HandlebarsApplicationMixin(sheets.Actor
   async DropActor(data) {
     return
 
+  }
+
+  //Create a Direct Active Effect
+  static async _createEffect (event, target) {
+    this.document.createEmbeddedDocuments('ActiveEffect', [{ name: ActiveEffect.defaultName({ parent: this.document }) }])
+  }
+
+  //View Active Effect
+  static async _viewActiveEffect (event, target) {
+    const id = target.closest('.item-edit')?.dataset?.effectId
+    if (id) {
+      const doc = this.document.effects.get(id)
+      if (doc) {
+        if (event.ctrlKey) {
+          const confirmation = await BRPDialog.confirm({
+            window: { title: game.i18n.format('BRP.deleteDoc', {type: game.i18n.localize('DOCUMENT.ActiveEffect')}) },
+            content: game.i18n.localize('BRP.deleteConfirm') + '<br><strong> ' + game.i18n.localize('DOCUMENT.ActiveEffect') + ': ' + doc.name + '</strong>'
+          })
+          if (confirmation) {
+            await doc.delete();
+          }
+        } else {
+          doc.sheet.render(true);
+        }
+      }
+    }
+  }
+
+  //Toggle Acvtive Effect
+  static async _toggleEffect (event, target) {
+    const id = target.closest('.item-edit')?.dataset?.effectId
+    if (id) {
+      const doc = this.document.effects.get(id)
+      if (doc) {
+        doc.update({
+          disabled: !doc.disabled
+        })
+      }
+    }
+  }
+
+  //Clear All Direct Effects
+  static async _clearEffects (event,target) {
+    if (event.detail === 2) { // Only perform on double click
+      const docs = (this.document.effects).map((itm) => {
+        return itm.id;
+      });
+      await ActiveEffect.deleteDocuments(docs, { parent: this.document })
+    }
   }
 }
