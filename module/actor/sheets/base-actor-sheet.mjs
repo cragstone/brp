@@ -70,6 +70,7 @@ export class BRPActorSheetV2 extends api.HandlebarsApplicationMixin(sheets.Actor
       xpRolls: this._onXPRolls,
       powImprove: this._onPowImprove,
       openWiki: this._openWiki,
+      clearCulture: this._clearCulture,
     }
   }
 
@@ -622,6 +623,14 @@ export class BRPActorSheetV2 extends api.HandlebarsApplicationMixin(sheets.Actor
   //Open Wili
   static async _openWiki(event,target) {
     BRPUtilities.openWiki()
+  }
+
+  //Clear Culture for NPC
+  static async _clearCulture(event, target) {
+    if (event.detail === 2) {
+      let cultures = await this.actor.items.filter(itm =>itm.type==='culture').map(itm => {return (itm.id)})
+      await Item.deleteDocuments(cultures, {parent: this.actor});
+    }
   }
 
 

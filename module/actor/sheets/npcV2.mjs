@@ -48,7 +48,7 @@ export class BRPNPCSheetV2 extends BRPActorSheetV2 {
     const actorData = this.actor.toObject(false);
     context.showArmour = false
     if (!context.useHPL || context.useBeastiary) { context.showArmour = true }
-
+    context.culture = await (this.actor.items.find((itm)=>itm.type === 'culture'))
 
     context.extDescValue = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
       this.actor.system.extDesc,

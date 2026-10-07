@@ -461,8 +461,8 @@ export class BRPCharacterSheet extends BRPActorSheetV2 {
 
         let skill1Select = "";
         let skill2Select = "";
-        skill1Select = skills.filter(nitm => nitm.flags.brp.brpidFlag.id === itm.system.skill1)[0]
-        skill2Select = skills.filter(nitm => nitm.flags.brp.brpidFlag.id === itm.system.skill2)[0]
+        skill1Select = this.actor.items.find(nitm => nitm.flags.brp.brpidFlag.id === itm.system.skill1)
+        skill2Select = this.actor.items.find(nitm => nitm.flags.brp.brpidFlag.id === itm.system.skill2)
         if (skill1Select && skill2Select) {
           if (itm.system.skill2 === 'none') {
             if (skill1Select) {

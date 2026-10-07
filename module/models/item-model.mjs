@@ -12,7 +12,7 @@ export default class BRPItemModel extends foundry.abstract.TypeDataModel {
     const fields = foundry.data.fields
     return {
       description: new fields.HTMLField({ initial: '' }),
-      gmNotes: new fields.HTMLField({ initial: '' }),
+      gmDescription: new fields.HTMLField({ initial: '' }),
     }
   }
 }

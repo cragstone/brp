@@ -401,14 +401,20 @@ export class BRPactorItemDrop {
         } else if (itm.type === 'profession') {
           updateItems.push({ _id: actItem._id, 'system.occupation': nItm.system.occupation })
         } else if (itm.type === 'culture') {
-          updateItems.push({ _id: actItem._id, 'system.culture': nItm.system.culture, 'system.cultural': nItm.system.cultural })
+          if (actor.type === 'character') {
+            updateItems.push({ _id: actItem._id, 'system.culture': nItm.system.culture, 'system.cultural': nItm.system.cultural })
+          } else if (actor.type === 'npc') {
+            updateItems.push({ _id: actItem._id, 'system.base': actItem.system.base + nItm.system.culture, 'system.cultural': nItm.system.cultural })
+          }
         }
       } else {
         nItm.system.base = await this._calcBase(nItm, actor)
+         if (actor.type === 'npc') {
+           nItm.system.base = nItm.system.base + nItm.system.culture
+         }
         addItems.push(nItm)
       }
     }
-
     await Item.createDocuments(addItems, { parent: actor })
     await Item.createDocuments(powerList, { parent: actor })
     await Item.updateDocuments(updateItems, { parent: actor })
@@ -419,10 +425,22 @@ export class BRPactorItemDrop {
     if (itm.type === 'culture') {
       let changes = {}
       for (let [key, stat] of Object.entries(itm.system.stats)) {
-        if (stat.formula != "") {
-          changes = Object.assign(changes, { [`system.stats.${key}.formula`]: stat.formula })
+        if (actor.type === 'character') {  
+          if (stat.formula != "") {
+            changes = Object.assign(changes, { [`system.stats.${key}.formula`]: stat.formula })
+          }
+          changes = Object.assign(changes, { [`system.stats.${key}.culture`]: Number(stat.mod) ?? 0 })
+        } else if (actor.type === 'npc') {
+          if (stat.formula != "") {
+            let formula = stat.formula;
+            if (Number(stat.mod) < 0) {
+              formula = formula.concat(stat.mod)
+            } else if (Number(stat.mod) > 0) {
+              formula = formula.concat("+",stat.mod)              
+            }
+            changes = Object.assign(changes, { [`system.baseStats.${key}.random`]: formula })
+          }  
         }
-        changes = Object.assign(changes, { [`system.stats.${key}.culture`]: Number(stat.mod) ?? 0 })
       }
       //Now add the move score
       changes = Object.assign(changes, { 'system.move': Number(itm.system.move) })

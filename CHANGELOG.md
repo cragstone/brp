@@ -1,5 +1,13 @@
 # CHANGE LOG
 
+## 14.10
+- GM Notes are properly recording data now on items
+- When dropping a Culture on an NPC the Rolled Stats will be updated (not the averages) along with skill scores
+- You will see the culture name at the bottom of the second NPC tab.  Double click the trashcan to delete the culture
+- Deleting the culture will not reset skills or stats
+
+## 14.9
+
 ## 14.8
 - Skill Bonuses now correctly calculating
 - Default scene will no longer be blank
