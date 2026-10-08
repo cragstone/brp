@@ -42,8 +42,8 @@
         <div class="brpform-group font14">
           <label class="bold group-label">{{ localize "BRP.choose" }}</label>
           {{#if ../isGM}}
-            <div class="stat-input font14"><input class="optGroup" type="text" name="system.groups.{{key}}.options"
-                value="{{lookup this 'options'}}" data-dtype="Number" /></div>
+            <div class="stat-input font14"><input class="optGroup" type="number" name="system.groups.{{key}}.options"
+                value="{{lookup this 'options'}}"/></div>
             <a class="group-control remove-group" data-tooltip="{{localize 'BRP.deleteGroup'}}"><i
                 class="item-control fas fa-minus" style="line-height: 20px;"></i></a>
           {{else}}

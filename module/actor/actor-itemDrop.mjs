@@ -65,15 +65,15 @@ export class BRPactorItemDrop {
             let skill2Test = 0
             let newSkill = "";
             //Test to see if skill1 or 2 exist on the character
-            if ((await actor.items.filter(itm => itm.type === 'skill' && nItm.system.skill1 === itm.flags.brp.brpidFlag.id)).length > 0) { skill1Test = 1 }
+            if ((await actor.items.filter(itm => itm.type === 'skill' && nItm.system.skill1 === itm.flags?.brp?.brpidFlag?.id)).length > 0) { skill1Test = 1 }
             if (nItm.system.skill2 != 'none') {
-              if ((await actor.items.filter(itm => itm.type === 'skill' && nItm.system.skill2 === itm.flags.brp.brpidFlag.id)).length > 0) { skill2Test = 1 }
+              if ((await actor.items.filter(itm => itm.type === 'skill' && nItm.system.skill2 === itm.flags?.brp?.brpidFlag?.id)).length > 0) { skill2Test = 1 }
             }
 
             //Test to see if the skill1 or 2 are in the newItems due to be created
-            if ((await newItemData.filter(itm => itm.type === 'skill' && nItm.system.skill1 === itm.flags.brp.brpidFlag.id)).length > 0) { skill1Test = 1 }
+            if ((await newItemData.filter(itm => itm.type === 'skill' && nItm.system.skill1 === itm.flags?.brp?.brpidFlag?.id)).length > 0) { skill1Test = 1 }
             if (nItm.system.skill2 != 'none') {
-              if ((await actor.items.filter(itm => itm.type === 'skill' && nItm.system.skill2 === itm.flags.brp.brpidFlag.id)).length > 0) { skill2Test = 1 }
+              if ((await actor.items.filter(itm => itm.type === 'skill' && nItm.system.skill2 === itm.flags?.brp?.brpidFlag?.id)).length > 0) { skill2Test = 1 }
             }
 
 
@@ -105,15 +105,15 @@ export class BRPactorItemDrop {
         if (nItm.type === 'skill') {
           if (nItm.system.group) {
             reqResult = 0;
-            errMsg = nItm.name + "(" + nItm.flags.brp.brpidFlag.id + "): " + game.i18n.localize('BRP.stopGroupSkill');
+            errMsg = nItm.name + "(" + nItm.flags?.brp?.brpidFlag?.id + "): " + game.i18n.localize('BRP.stopGroupSkill');
           } else if (nItm.system.specialism && !nItm.system.chosen) {
             nItm = await this._getSpecialism(foundry.utils.duplicate(nItm), actor)
           }
           if (!nItm.system.specialism || (nItm.system.specialism && nItm.system.chosen)) {
-            let dupItm = await actor.items.filter(itm => itm.type === 'skill' && itm.flags.brp.brpidFlag.id === nItm.flags.brp.brpidFlag.id)
+            let dupItm = await actor.items.filter(itm => itm.type === 'skill' && itm.flags?.brp?.brpidFlag?.id === nItm.flags?.brp?.brpidFlag?.id)
             if (dupItm.length > 0) {
               reqResult = 0;
-              errMsg = nItm.name + "(" + nItm.flags.brp.brpidFlag.id + "): " + game.i18n.localize('BRP.dupItem');
+              errMsg = nItm.name + "(" + nItm.flags?.brp?.brpidFlag?.id + "): " + game.i18n.localize('BRP.dupItem');
             }
           }
           //If skill is to be added then check that the Skill Category is on the actor
@@ -137,10 +137,10 @@ export class BRPactorItemDrop {
             reqResult = 0;
             errMsg = nItm.name + " : " + game.i18n.localize('BRP.noAlleg');
           } else {
-            let dupItm = await actor.items.filter(itm => itm.type === 'allegiance' && itm.flags.brp.brpidFlag.id === nItm.flags.brp.brpidFlag.id)
+            let dupItm = await actor.items.filter(itm => itm.type === 'allegiance' && itm.flags?.brp?.brpidFlag?.id === nItm.flags?.brp?.brpidFlag?.id)
             if (dupItm.length > 0) {
               reqResult = 0;
-              errMsg = nItm.name + "(" + nItm.flags.brp.brpidFlag.id + "): " + game.i18n.localize('BRP.dupItem');
+              errMsg = nItm.name + "(" + nItm.flags?.brp?.brpidFlag?.id + "): " + game.i18n.localize('BRP.dupItem');
             }
           }
         }
@@ -157,10 +157,10 @@ export class BRPactorItemDrop {
               errMsg = nItm.name + " : " + game.i18n.localize('BRP.oneRep');
             }
           } else {
-            let dupItm = await actor.items.filter(itm => itm.type === 'reputation' && itm.flags.brp.brpidFlag.id === nItm.flags.brp.brpidFlag.id)
+            let dupItm = await actor.items.filter(itm => itm.type === 'reputation' && itm.flags?.brp?.brpidFlag?.id === nItm.flags?.brp?.brpidFlag?.id)
             if (dupItm.length > 0) {
               reqResult = 0;
-              errMsg = nItm.name + "(" + nItm.flags.brp.brpidFlag.id + "): " + game.i18n.localize('BRP.dupItem');
+              errMsg = nItm.name + "(" + nItm.flags?.brp?.brpidFlag?.id + "): " + game.i18n.localize('BRP.dupItem');
             }
           }
         }
@@ -171,10 +171,10 @@ export class BRPactorItemDrop {
             reqResult = 0;
             errMsg = nItm.name + " : " + game.i18n.localize('BRP.noPersTrait');
           } else {
-            let dupItm = await actor.items.filter(itm => itm.type === 'persTrait' && itm.flags.brp.brpidFlag.id === nItm.flags.brp.brpidFlag.id)
+            let dupItm = await actor.items.filter(itm => itm.type === 'persTrait' && itm.flags?.brp?.brpidFlag?.id === nItm.flags?.brp?.brpidFlag?.id)
             if (dupItm.length > 0) {
               reqResult = 0;
-              errMsg = nItm.name + "(" + nItm.flags.brp.brpidFlag.id + "): " + game.i18n.localize('BRP.dupItem');
+              errMsg = nItm.name + "(" + nItm.flags?.brp?.brpidFlag?.id + "): " + game.i18n.localize('BRP.dupItem');
             }
           }
         }
@@ -185,10 +185,10 @@ export class BRPactorItemDrop {
             reqResult = 0;
             errMsg = nItm.name + " : " + game.i18n.localize('BRP.noPassion');
           } else {
-            let dupItm = await actor.items.filter(itm => itm.type === 'passion' && itm.flags.brp.brpidFlag.id === nItm.flags.brp.brpidFlag.id)
+            let dupItm = await actor.items.filter(itm => itm.type === 'passion' && itm.flags?.brp?.brpidFlag?.id === nItm.flags?.brp?.brpidFlag?.id)
             if (dupItm.length > 0) {
               reqResult = 0;
-              errMsg = nItm.name + "(" + nItm.flags.brp.brpidFlag.id + "): " + game.i18n.localize('BRP.dupItem');
+              errMsg = nItm.name + "(" + nItm.flags?.brp?.brpidFlag?.id + "): " + game.i18n.localize('BRP.dupItem');
             }
           }
         }
@@ -203,10 +203,10 @@ export class BRPactorItemDrop {
 
         //If a power,magic,mutation,psychic,sorcery,superpower etc and not failed a previous test, check to see if the item already exists on the character sheet
         if ((['power', 'magic', 'mutation', 'psychic', 'sorcery', 'super', 'hit-location', 'skillcat'].includes(nItm.type)) && reqResult === 1) {
-          let dupItm = await actor.items.filter(itm => itm.type === nItm.type && itm.flags.brp.brpidFlag.id === nItm.flags.brp.brpidFlag.id)
+          let dupItm = await actor.items.filter(itm => itm.type === nItm.type && itm.flags?.brp?.brpidFlag?.id === nItm.flags?.brp?.brpidFlag?.id)
           if (dupItm.length > 0) {
             reqResult = 0;
-            errMsg = nItm.name + "(" + nItm.flags.brp.brpidFlag.id + "): " + game.i18n.localize('BRP.dupItem');
+            errMsg = nItm.name + "(" + nItm.flags?.brp?.brpidFlag?.id + "): " + game.i18n.localize('BRP.dupItem');
           }
         }
 
@@ -302,7 +302,7 @@ export class BRPactorItemDrop {
           continue
         }
         if (newSkill) {
-          if (await actor.items.filter(nitm => nitm.flags.brp.brpidFlag.id === newSkill.flags.brp.brpidFlag.id)) {
+          if (await actor.items.filter(nitm => nitm.flags?.brp?.brpidFlag?.id === newSkill.flags?.brp?.brpidFlag?.id)) {
             continue
           } else {
             powerList.push(foundry.utils.duplicate(newSkill))
@@ -394,7 +394,7 @@ export class BRPactorItemDrop {
       }
 
       //If existing skill on actor then push to updateItems otherwise calculate base and push to addItems
-      let actItem = (await actor.items.filter(dItm => dItm.getFlag('brp', 'brpidFlag')?.id).filter(cItm => cItm.flags.brp.brpidFlag.id === nItm.flags.brp.brpidFlag.id))[0]
+      let actItem = (await actor.items.filter(dItm => dItm.getFlag('brp', 'brpidFlag')?.id).filter(cItm => cItm.flags?.brp?.brpidFlag?.id === nItm.flags?.brp?.brpidFlag?.id))[0]
       if (actItem) {
         if (itm.type === 'personality') {
           updateItems.push({ _id: actItem._id, 'system.personality': nItm.system.personality, 'system.prsnlty': nItm.system.prsnlty })
@@ -569,7 +569,7 @@ export class BRPactorItemDrop {
         return 0;
       });
       for (let skillOpt of skillList) {
-        selectOptions.push({ id: skillOpt.flags.brp.brpidFlag.id, selected: false, name: skillOpt.name })
+        selectOptions.push({ id: skillOpt.flags?.brp?.brpidFlag?.id, selected: false, name: skillOpt.name })
       }
     }
     let selectedSkill = await SkillsSelectDialog.create(selectOptions, picks, game.i18n.localize('BRP.skills'))
@@ -648,7 +648,7 @@ export class BRPactorItemDrop {
   static async _checkSkillCat(skill, actor) {
     //Check to see if the skill category already exists and if it does then do nothing
     let newSkillCats = []
-    if (actor.items.filter(dItm => dItm.getFlag('brp', 'brpidFlag')?.id).filter(nitm => nitm.flags.brp.brpidFlag.id === skill.system.category).length > 0) {
+    if (actor.items.filter(dItm => dItm.getFlag('brp', 'brpidFlag')?.id).filter(nitm => nitm.flags?.brp?.brpidFlag?.id === skill.system.category).length > 0) {
       return
     }
     //Get the best version of the skill category

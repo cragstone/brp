@@ -1,5 +1,8 @@
 # CHANGE LOG
 
+## 14.11
+- Minor bug fixes
+
 ## 14.10
 - GM Notes are properly recording data now on items
 - When dropping a Culture on an NPC the Rolled Stats will be updated (not the averages) along with skill scores

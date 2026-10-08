@@ -15,7 +15,7 @@
           <option value="+">Add</option>
           <option value="-" {{#if effect.negative}} selected="selected" {{/if}}>Subtract</option>
         </select>
-        <input type="text" value="{{effect.value}}" data-dtype="Number">
+        <input type="number" value="{{effect.value}}">
         <a class="control-button"><i class="item-control fas fa-trash"></i></a>
       </div>
     {{/each}}

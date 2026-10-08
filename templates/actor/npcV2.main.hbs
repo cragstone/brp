@@ -11,8 +11,8 @@
               <div class="rollable centre" data-action="statRoll" data-tooltip="{{localize 'BRP.charHint'}}" data-characteristic="{{key}}">
                 {{stat.total}}</div>
             {{else}}
-              <div><input class="centre npcpersonal-inp" name="system.stats.{{key}}.base" type="text" value="{{stat.base}}"
-                  data-dtype="Number" /></div>
+              <div><input class="centre npcpersonal-inp" name="system.stats.{{key}}.base" type="number" value="{{stat.base}}"
+                   /></div>
             {{/if}}
           {{/if}}
         {{/each}}
@@ -24,41 +24,41 @@
         {{#if useHPL}}
         <div class="centre">{{system.health.value}}</div>
         {{else}}
-        <div class="centre"><input class="centre npcpersonal-inp" name="system.health.value" type="text"
-            value="{{system.health.value}}" data-dtype="Number" /></div>
+        <div class="centre"><input class="centre npcpersonal-inp" name="system.health.value" type="number"
+            value="{{system.health.value}}"  /></div>
         {{/if}}
         <div class="charname centre"> / </div>
         <div class="centre">{{system.health.max}}</div>
         <div class="charname" data-tooltip="{{system.power.label}}">{{system.power.labelAbbr}}</div>
-        <div class="centre"><input class="centre npcpersonal-inp" name="system.power.value" type="text"
-            value="{{system.power.value}}" data-dtype="Number" /></div>
+        <div class="centre"><input class="centre npcpersonal-inp" name="system.power.value" type="number"
+            value="{{system.power.value}}"  /></div>
         <div class="charname centre"> / </div>
         <div class="centre">{{system.power.max}}</div>
 
         {{#isOr useFP useBeastiary}}
         <div class="charname" data-tooltip="{{system.fatigue.label}}">{{system.fatigue.labelAbbr}}</div>
-        <div class=" centre"><input class="centre npcpersonal-inp" name="system.fatigue.value" type="text"
-            value="{{system.fatigue.value}}" data-dtype="Number" /></div>
+        <div class=" centre"><input class="centre npcpersonal-inp" name="system.fatigue.value" type="number"
+            value="{{system.fatigue.value}}"  /></div>
         <div class="charname centre"> / </div>
         <div class=" centre">{{system.fatigue.max}}</div>
         {{/isOr}}
 
         {{#isOr useSAN useBeastiary}}
         <div class="charname" data-tooltip="{{system.sanity.label}}">{{system.sanity.labelAbbr}}</div>
-        <div class=" centre"><input class="centre npcpersonal-inp" name="system.sanity.value" type="text"
-            value="{{system.sanity.value}}" data-dtype="Number" /></div>
+        <div class=" centre"><input class="centre npcpersonal-inp" name="system.sanity.value" type="number"
+            value="{{system.sanity.value}}"  /></div>
         <div class=" centre"> / </div>
-        <div class="centre"><input class="centre npcpersonal-inp" name="system.sanity.max" type="text"
-            value="{{system.sanity.max}}" data-dtype="Number" /></div>
+        <div class="centre"><input class="centre npcpersonal-inp" name="system.sanity.max" type="number"
+            value="{{system.sanity.max}}"  /></div>
         {{/isOr}}
 
         {{#isOr useRes5 useBeastiary}}
         <div class="charname" data-tooltip="{{system.res5.label}}">{{system.res5.labelAbbr}}</div>
-        <div class=" centre"><input class="centre npcpersonal-inp" name="system.res5.value" type="text"
-            value="{{system.res5.value}}" data-dtype="Number" /></div>
+        <div class=" centre"><input class="centre npcpersonal-inp" name="system.res5.value" type="number"
+            value="{{system.res5.value}}"  /></div>
         <div class=" centre"> / </div>
-        <div class="centre"><input class="centre npcpersonal-inp" name="system.res5.max" type="text"
-            value="{{system.res5.max}}" data-dtype="Number" /></div>
+        <div class="centre"><input class="centre npcpersonal-inp" name="system.res5.max" type="number"
+            value="{{system.res5.max}}"  /></div>
         {{/isOr}}
       </section>
 
@@ -123,7 +123,7 @@
                 type="text" value="{{skill.name}}" /></span>
           </div>
           <div class="right"><input class="npcpersonal-inp centre inline-edit" data-field="base"
-              name="skill.system.base" type="text" value="{{skill.system.base}}" data-dtype="Number" /></div>
+              name="skill.system.base" type="number" value="{{skill.system.base}}"  /></div>
           {{/if}}
         </div>
       </li>
@@ -165,9 +165,9 @@
             <div class="centre">{{weapon.system.rangeName}}</div>
             <div class="centre">{{weapon.system.att}}</div>
             <div class="centre"> <input class="npcpersonal-inp centre inline-edit" data-field="hpCurr"
-                name="weapon.system.hpCurr" type="text" value="{{weapon.system.hpCurr}}" data-dtype="Number" /></div>
+                name="weapon.system.hpCurr" type="number" value="{{weapon.system.hpCurr}}"  /></div>
             <div class="centre"> <input class="npcpersonal-inp centre inline-edit" data-field="ammoCurr"
-                name="weapon.system.ammoCurr" type="text" value="{{weapon.system.ammoCurr}}" data-dtype="Number" />
+                name="weapon.system.ammoCurr" type="number" value="{{weapon.system.ammoCurr}}"  />
             </div>
             {{else}}
             <div class="npc-weapon-cell-unlock">
@@ -176,7 +176,7 @@
                   type="text" value="{{weapon.name}}" /></span>
             </div>
             <div class="right"><input class="npcpersonal-inp centre inline-edit" data-field="npcVal"
-                name="weapon.system.npcVal" type="text" value="{{weapon.system.npcVal}}" data-dtype="Number" /></div>
+                name="weapon.system.npcVal" type="number" value="{{weapon.system.npcVal}}"  /></div>
             <div class="right"><input class="npcpersonal-inp centre inline-edit" data-field="dmg1"
                 name="weapon.system.dmg1" type="text" value="{{weapon.system.dmg1}}"/></div>
             <div class="centre" data-tooltip="{{weapon.system.dbNameHint}}">{{weapon.system.dbName}}</div>
@@ -185,9 +185,9 @@
             <div class="centre"> <input class="npcpersonal-inp centre inline-edit" data-field="att"
                 name="weapon.system.att" type="text" value="{{weapon.system.att}}" /></div>
             <div class="centre"> <input class="npcpersonal-inp centre inline-edit" data-field="hpCurr"
-                name="weapon.system.hpCurr" type="text" value="{{weapon.system.hpCurr}}" data-dtype="Number" /></div>
+                name="weapon.system.hpCurr" type="number" value="{{weapon.system.hpCurr}}"  /></div>
             <div class="centre"> <input class="npcpersonal-inp centre inline-edit" data-field="ammoCurr"
-                name="weapon.system.ammoCurr" type="text" value="{{weapon.system.ammoCurr}}" data-dtype="Number" />
+                name="weapon.system.ammoCurr" type="number" value="{{weapon.system.ammoCurr}}"  />
             </div>
             {{/if}}
           </div>
@@ -238,13 +238,13 @@
                 <input class="npcpersonal-inp centre inline-edit" data-field="currHP" name="hitloc.system.currHP"
                   type="number" min="0"
                   oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? -Math.abs(this.value) : null"
-                  value="{{hitloc.system.currHP}}" data-dtype="Number" />
+                  value="{{hitloc.system.currHP}}"  />
               </div>
               <div></div>
               <div></div>
             {{else}}
               <div class="centre"><input class="npcpersonal-inp centre inline-edit" data-field="currHP"
-                  name="hitloc.system.currHP" type="text" value="{{hitloc.system.currHP}}" data-dtype="Number" /></div>
+                  name="hitloc.system.currHP" type="number" value="{{hitloc.system.currHP}}"  /></div>
               <div class="centre">/</div>
               <div class="centre">{{hitloc.system.maxHP}}</div>
             {{/if}}
@@ -276,9 +276,9 @@
               name="hitloc.system.bapRnd" type="text" value="{{hitloc.system.bapRnd}}" /></div>
           {{else}}
           <div class="centre"><input class="npcpersonal-inp centre inline-edit" data-field="ap"
-              name="hitloc.system.ap" type="text" value="{{hitloc.system.ap}}" data-dtype="Number" /></div>
+              name="hitloc.system.ap" type="number" value="{{hitloc.system.ap}}"  /></div>
           <div class="centre"><input class="npcpersonal-inp centre inline-edit" data-field="bap"
-              name="hitloc.system.bap" type="text" value="{{hitloc.system.bap}}" data-dtype="Number" /></div>
+              name="hitloc.system.bap" type="number" value="{{hitloc.system.bap}}"  /></div>
           {{/if}}
         </div>
         {{/if}}
@@ -303,8 +303,8 @@
           <div class=""><input class="npcpersonal-inp" name="system.apRnd" type="text" value="{{system.apRnd}}" />
           </div>
         {{else}}
-          <div class=""><input class="npcpersonal-inp" name="system.ap" type="text" value="{{system.ap}}"
-              data-dtype="Number" /></div>
+          <div class=""><input class="npcpersonal-inp" name="system.ap" type="number" value="{{system.ap}}"
+               /></div>
         {{/if}}
       {{/if}}
       <div class="" data-tooltip="{{ localize 'BRP.bapHint'}}">{{ localize 'BRP.bap'}}:</div>
@@ -319,8 +319,8 @@
           <div class=""><input class="npcpersonal-inp" name="system.bapRnd" type="text" value="{{system.bapRnd}}" />
           </div>
         {{else}}
-          <div class=""><input class="npcpersonal-inp" name="system.bap" type="text" value="{{system.bap}}"
-              data-dtype="Number" /></div>
+          <div class=""><input class="npcpersonal-inp" name="system.bap" type="number" value="{{system.bap}}"
+               /></div>
         {{/if}}
       {{/if}}
     </section>
@@ -350,7 +350,7 @@
                 type="text" value="{{gear.name}}" /></span>
           </div>
           <div class="right"><input class="npcpersonal-inp centre inline-edit" data-field="quantity"
-              name="gear.system.quantity" type="text" value="{{gear.system.quantity}}" data-dtype="Number" /></div>
+              name="gear.system.quantity" type="number" value="{{gear.system.quantity}}"  /></div>
           {{/if}}
         </div>
       </li>
@@ -395,7 +395,7 @@
           <div class="centre rollable" data-action="skillRoll">{{power.system.total}}</div>
           {{else}}
           <div class="centre"><input class="npcpersonal-inp centre inline-edit" data-field="base"
-              name="power.system.base" type="text" value="{{power.system.base}}" data-dtype="Number" /></div>
+              name="power.system.base" type="number" value="{{power.system.base}}"  /></div>
           {{/if}}
           {{else}}
           <div></div>
@@ -454,7 +454,7 @@
                 type="text" value="{{passion.name}}" /></span>
           </div>
           <div class="right"><input class="npcpersonal-inp centre inline-edit" data-field="base"
-              name="passion.system.base" type="text" value="{{passion.system.base}}" data-dtype="Number" /></div>
+              name="passion.system.base" type="number" value="{{passion.system.base}}"  /></div>
           {{/if}}
         </div>
       </li>
@@ -485,8 +485,8 @@
                 type="text" value="{{allegiance.name}}" /></span>
           </div>
           <div class="right"><input class="npcpersonal-inp centre inline-edit" data-field="allegPoints"
-              name="allegiance.system.allegPoints" type="text" value="{{allegiance.system.allegPoints}}"
-              data-dtype="Number" /></div>
+              name="allegiance.system.allegPoints" type="number" value="{{allegiance.system.allegPoints}}"
+               /></div>
           {{/if}}
         </div>
       </li>
@@ -520,7 +520,7 @@
                 type="text" value="{{persTrait.name}}" /></span>
           </div>
           <div class="right"><input class="npcpersonal-inp centre inline-edit" data-field="base"
-              name="persTrait.system.base" type="text" value="{{persTrait.system.base}}" data-dtype="Number" /></div>
+              name="persTrait.system.base" type="number" value="{{persTrait.system.base}}"  /></div>
           {{/if}}
         </div>
       </li>
@@ -551,7 +551,7 @@
                 type="text" value="{{reputation.name}}" /></span>
           </div>
           <div class="right"><input class="npcpersonal-inp centre inline-edit" data-field="base"
-              name="reputation.system.base" type="text" value="{{reputation.system.base}}" data-dtype="Number" /></div>
+              name="reputation.system.base" type="number" value="{{reputation.system.base}}"  /></div>
           {{/if}}
         </div>
       </li>
@@ -604,17 +604,17 @@
           </select>
         </div>
         <div class="new-row">{{localize 'BRP.multiplier'}}</div>
-        <div><input class="centre npcpersonal-inp" name="system.hp.multi" type="text" value="{{actor.system.hp.multi}}"
-            data-dtype="Number" /></div>
+        <div><input class="centre npcpersonal-inp" name="system.hp.multi" type="number" value="{{actor.system.hp.multi}}"
+             /></div>
         <div class="new-row">{{localize 'BRP.hpBonus' label=system.health.labelAbbr}}</div>
-        <div><input class="centre npcpersonal-inp" name="system.health.mod" type="text"
-            value="{{actor.system.health.mod}}" data-dtype="Number" /></div>
+        <div><input class="centre npcpersonal-inp" name="system.health.mod" type="number"
+            value="{{actor.system.health.mod}}"  /></div>
         <div class="new-row">{{localize 'BRP.ppBonus' label=system.power.labelAbbr}}</div>
-        <div><input class="centre npcpersonal-inp" name="system.power.mod" type="text" value="{{actor.system.power.mod}}"
-            data-dtype="Number" /></div>
+        <div><input class="centre npcpersonal-inp" name="system.power.mod" type="number" value="{{actor.system.power.mod}}"
+             /></div>
         <div class="new-row">{{localize 'BRP.fpBonus' label=system.fatigue.labelAbbr}}</div>
-        <div><input class="centre npcpersonal-inp" name="system.fatigue.mod" type="text"
-            value="{{actor.system.fatigue.mod}}" data-dtype="Number" /></div>
+        <div><input class="centre npcpersonal-inp" name="system.fatigue.mod" type="number"
+            value="{{actor.system.fatigue.mod}}"  /></div>
         <div class="new-row">&NonBreakingSpace;</div>
         <div class="new-row">{{localize 'BRP.calculation' label=system.health.labelAbbr}}</div>
         <div style="grid-column: 2 / span 2;">{{actor.system.hp.formula}}</div>

@@ -177,7 +177,7 @@ export class BRPSuperSheet extends BRPItemSheetV2 {
       }
 
       //Dropping in Main Skill list
-      if (collection.find(el => el.brpid === item.flags.brp.brpidFlag.id)) {
+      if (collection.find(el => el.brpid === item.flags?.brp?.brpidFlag?.id)) {
         ui.notifications.warn(item.name + " : " + game.i18n.localize('BRP.dupItem'));
         continue
       }

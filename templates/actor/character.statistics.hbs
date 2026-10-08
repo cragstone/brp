@@ -26,11 +26,11 @@
               <a class="" data-action="redistStat" data-tooltip="{{ localize 'BRP.increase' }}" data-type="increase" data-stat={{key}}><i class="fas fa-caret-right"></i></a>
             {{/unless}}
           </div>
-          <div><input class="font16-inp centre" name="system.stats.{{key}}.base" type="text" value="{{stat.base}}" data-dtype="Number" /></div>
+          <div><input class="font16-inp centre" name="system.stats.{{key}}.base" type="number" value="{{stat.base}}"/></div>
           <div class="font16-disp centre {{#unless (eq ../system.redistTotal 0)}}grid-error{{/unless}}">{{stat.redist}}</div>
-          <div><input class="font16-inp centre" name="system.stats.{{key}}.culture" type="text" value="{{stat.culture}}" data-dtype="Number" /></div>
-          <div><input class="font16-inp centre" name="system.stats.{{key}}.age" type="text" value="{{stat.age}}" data-dtype="Number" /></div>
-          <div><input class="font16-inp centre" name="system.stats.{{key}}.exp" type="text" value="{{stat.exp}}" data-dtype="Number" /></div>
+          <div><input class="font16-inp centre" name="system.stats.{{key}}.culture" type="number" value="{{stat.culture}}"/></div>
+          <div><input class="font16-inp centre" name="system.stats.{{key}}.age" type="number" value="{{stat.age}}"/></div>
+          <div><input class="font16-inp centre" name="system.stats.{{key}}.exp" type="number" value="{{stat.exp}}"/></div>
           <div class="font16-disp centre" >{{stat.effects}}</div>
           <div class="font16 centre bold" data-tooltip="{{stat.labelShort}}">{{stat.total}}</div>
           {{#if ../statLocked}}

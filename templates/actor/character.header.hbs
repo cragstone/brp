@@ -65,7 +65,7 @@
           <div class="personal-display">{{actor.system.age}}</div>
         {{else}}
           <label class="item charname">{{ localize 'BRP.age' }}:</label>
-          <input class="personal-inp" name="system.age" type="text" value="{{actor.system.age}}" data-dtype="Number" />
+          <input class="personal-inp" name="system.age" type="number" value="{{actor.system.age}}"/>
         {{/if}}
       </div>
 
@@ -238,8 +238,7 @@
           <div class="resource-grid">
             <div class="right rollable" data-action="attribute" data-att="power" data-adj="spend"><a class="smallIcon"
                 data-tooltip="{{localize 'BRP.ppSpend'}}"><i class="fas fa-bolt"></i></a></div>
-            <input class="attrib-inp centre" type="text" name="system.power.value" value="{{system.power.value}}"
-              data-dtype="Number" />
+            <input class="attrib-inp centre" type="number" name="system.power.value" value="{{system.power.value}}"/>
             <span class="divider"> / </span>
             <div class="attrib-disp tertiary bold">{{system.power.max}}</div>
             <div class="left rollable"  data-action="attribute" data-att="power" data-adj="recover"><a class="smallIcon"
@@ -253,8 +252,7 @@
             <div class="resource-grid">
               <div class="right rollable" data-action="attribute" data-att="fatigue" data-adj="spend"><a class="smallIcon"
                   data-tooltip="{{localize 'BRP.ppSpend'}}"><i class="fas fa-person-running"></i></a></div>
-              <input class="attrib-inp centre" type="text" name="system.fatigue.value" value="{{system.fatigue.value}}"
-                data-dtype="Number" />
+              <input class="attrib-inp centre" type="number" name="system.fatigue.value" value="{{system.fatigue.value}}"/>
               <span class="divider"> / </span>
               <div class="attrib-disp tertiary bold">{{system.fatigue.max}}</div>
               <div class="left rollable" data-action="attribute" data-att="fatigue" data-adj="recover"><a class="smallIcon"
@@ -268,11 +266,9 @@
             <label for="system.sanity.value" class="resource-label">{{system.sanity.label}}</label>
             <div class="resource-grid">
               <div></div>
-              <input class="attrib-inp centre" type="text" name="system.sanity.value" value="{{system.sanity.value}}"
-                data-dtype="Number" />
+              <input class="attrib-inp centre" type="number" name="system.sanity.value" value="{{system.sanity.value}}"/>
               <div class="divider"> / </div>
-              <input class="attrib-inp centre" type="text" name="system.sanity.max" value="{{system.sanity.max}}"
-                data-dtype="Number" />
+              <input class="attrib-inp centre" type="number" name="system.sanity.max" value="{{system.sanity.max}}"/>
               <div></div>
             </div>
           </div>
@@ -283,11 +279,9 @@
             <label for="system.res5.value" class="resource-label">{{system.res5.label}}</label>
             <div class="resource-grid">
               <div></div>
-              <input class="attrib-inp centre" type="text" name="system.res5.value" value="{{system.res5.value}}"
-                data-dtype="Number" />
+              <input class="attrib-inp centre" type="number" name="system.res5.value" value="{{system.res5.value}}"/>
               <span class="divider"> / </span>
-              <input class="attrib-inp centre" type="text" name="system.res5.max" value="{{system.res5.max}}"
-                data-dtype="Number" />
+              <input class="attrib-inp centre" type="number" name="system.res5.max" value="{{system.res5.max}}"/>
               <div></div>
             </div>
           </div>

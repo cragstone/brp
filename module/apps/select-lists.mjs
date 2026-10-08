@@ -46,7 +46,7 @@ export class BRPSelectLists {
     });
     let options = {"": ""}
     for (let itm of skillCatList) {
-      if (itm.flags.brp.brpidFlag.id) {
+      if (itm.flags?.brp?.brpidFlag?.id) {
         options = Object.assign(options, { [itm.flags.brp.brpidFlag.id]: itm.name })
       }
     }

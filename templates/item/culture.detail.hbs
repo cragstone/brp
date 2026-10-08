@@ -18,8 +18,7 @@
       {{#if ../isGM}}
         <div class="stat-input centre"><input name="system.stats.{{key}}.formula" type="text" value="{{stat.formula}}">
         </div>
-        <div class="stat-input centre"><input name="system.stats.{{key}}.mod" type="text" value="{{stat.mod}}"
-            data-dtype="Number" /></div>
+        <div class="stat-input centre"><input name="system.stats.{{key}}.mod" type="number" value="{{stat.mod}}"/></div>
       {{else}}
         <div class="stat-input centre">{{stat.formula}}</div>
         <div class="stat-input centre">{{stat.mod}}</div>
@@ -81,8 +80,7 @@
           <label class="bold group-label">{{ localize "BRP.choose" }}</label>
           {{#if ../isGM}}
             <div class="stat-input">
-              <input class="optGroup" type="text" name="system.groups.{{key}}.options" value="{{lookup this 'options'}}"
-                data-dtype="Number" />
+              <input class="optGroup" type="number" name="system.groups.{{key}}.options" value="{{lookup this 'options'}}"/>
             </div>
             <a class="group-control remove-group" data-tooltip="{{localize 'BRP.deleteGroup'}}"><i
                 class="item-control fas fa-minus" style="line-height: 20px;"></i></a>

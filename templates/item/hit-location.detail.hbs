@@ -8,18 +8,18 @@
       <div class="stat-input"><input name="system.creatureType" type="text" value="{{item.system.creatureType}}" /></div>
       <br>
       <div class="new-row skill-display">{{localize 'BRP.hitLocLowRoll'}}</div>
-      <div class="stat-input"><input name="system.lowRoll" type="text" value="{{item.system.lowRoll}}"
-          data-dtype="Number" /></div>
+      <div class="stat-input"><input name="system.lowRoll" type="number" value="{{item.system.lowRoll}}"
+           /></div>
       <div class="skill-display">{{localize 'BRP.hitLocHighRoll'}}</div>
-      <div class="stat-input"><input name="system.highRoll" type="text" value="{{item.system.highRoll}}"
-          data-dtype="Number" /></div>
+      <div class="stat-input"><input name="system.highRoll" type="number" value="{{item.system.highRoll}}"
+           /></div>
       <div class="skill-display" data-tooltip="{{localize 'BRP.hitLocFractionHint'}}">{{localize 'BRP.hitLocFraction'
         label=item.system.healthLabelAbbr}}</div>
-      <div class="stat-input"><input name="system.fractionHP" type="text" value="{{item.system.fractionHP}}"
-          data-dtype="Number" /></div>
+      <div class="stat-input"><input name="system.fractionHP" type="number" value="{{item.system.fractionHP}}"
+           /></div>
       <div class="skill-display" data-tooltip="{{localize 'BRP.hitLocFractionHint'}}">{{localize 'BRP.hitLocENCFraction'}}</div>
-      <div class="stat-input"><input name="system.fractionENC" type="text" value="{{item.system.fractionENC}}"
-          data-dtype="Number" /></div>
+      <div class="stat-input"><input name="system.fractionENC" type="number" value="{{item.system.fractionENC}}"
+           /></div>
       <div class="skill-display" data-tooltip="{{localize 'BRP.hitLocTypeHint'}}">{{localize 'BRP.hitLocType'}}</div>
       <div class="hitloc-input-small centre">
         <select style="min-width: 200px;" data-handle-change name="system.locType">
@@ -49,7 +49,7 @@
     <div class="hitloc-scores">
       <div class="skill-display new-row" data-tooltip="{{localize 'BRP.hpAdjHint' label=item.system.healthLabelAbbr}}">{{localize
         'BRP.hpAdj' label = item.system.healthLabelAbbr}}</div>
-      <div class="stat-input"><input name="system.adj" type="text" value="{{item.system.adj}}" data-dtype="Number" />
+      <div class="stat-input"><input name="system.adj" type="number" value="{{item.system.adj}}"  />
       </div>
       <br>
     </div>

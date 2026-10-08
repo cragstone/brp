@@ -10,11 +10,9 @@
   <div class="item-title"> {{localize 'BRP.allegPoints'}}:</div>
   <div class="armour-scores">
     <div class="skill-display new-row indent">{{localize 'BRP.base'}}</div>
-    <div class="weapon-input centre"><input name="system.allegPoints" type="text" value="{{item.system.allegPoints}}"
-        data-dtype="Number" /></div>
+    <div class="weapon-input centre"><input name="system.allegPoints" type="number" value="{{item.system.allegPoints}}"/></div>
     <div class="skill-display indent">{{localize 'BRP.allegImprov'}}</div>
-    <div class="weapon-input centre"><input name="system.xp" type="text" value="{{item.system.xp}}"
-        data-dtype="Number" />
+    <div class="weapon-input centre"><input name="system.xp" type="number" value="{{item.system.xp}}"/>
     </div>
     <div class="skill-display indent">{{localize 'BRP.total'}}</div>
     <div class="weapon-input centre bold tertiary">{{item.system.total}}</div>

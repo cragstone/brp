@@ -116,7 +116,7 @@ export class BRPActor extends Actor {
         }
         itm.system.bonus = bonus
         itm.system.total = itm.system.bonus + itm.system.mod
-        let key = itm.flags.brp.brpidFlag.id
+        let key = itm.flags?.brp?.brpidFlag?.id
         systemData.skillcategory[key] = itm.system.total;
       }
     }
@@ -647,7 +647,7 @@ export class BRPActor extends Actor {
       let newSkills = []
       let skillList = (await game.system.api.brpid.fromBRPIDRegexBest({ brpidRegExp: new RegExp('^i.skill'), type: 'i' })).filter(itm => itm.system.basic)
       for (let itm of skillList) {
-        if (actor.items.filter(nitm => nitm.flags.brp.brpidFlag.id === itm.flags.brp.brpidFlag.id).length < 1) {
+        if (actor.items.filter(nitm => nitm.flags?.brp?.brpidFlag?.id === itm.flags.brp.brpidFlag.id).length < 1) {
           itm.system.base = await BRPactorItemDrop._calcBase(itm, actor);
           newSkills.push(itm);
         }
@@ -661,7 +661,7 @@ export class BRPActor extends Actor {
       let newTraits = []
       let traitList = (await game.system.api.brpid.fromBRPIDRegexBest({ brpidRegExp: new RegExp('^i.persTrait'), type: 'i' })).filter(itm => itm.system.basic)
       for (let itm of traitList) {
-        if (actor.items.filter(nitm => nitm.flags.brp.brpidFlag.id === itm.flags.brp.brpidFlag.id).length < 1) {
+        if (actor.items.filter(nitm => nitm.flags?.brp?.brpidFlag?.id === flags?.brp?.brpidFlag?.id).length < 1) {
           newTraits.push(itm);
         }
       }
@@ -675,7 +675,7 @@ export class BRPActor extends Actor {
       let newSkillCats = []
       let skillCatList = (await game.system.api.brpid.fromBRPIDRegexBest({ brpidRegExp: new RegExp('^i.skillcat'), type: 'i' }))
       for (let itm of skillCatList) {
-        if (actor.items.filter(nitm => nitm.flags.brp.brpidFlag.id === itm.flags.brp.brpidFlag.id).length < 1) {
+        if (actor.items.filter(nitm => nitm.flags?.brp?.brpidFlag?.id === itm.flags?.brp?.brpidFlag?.id).length < 1) {
           newSkillCats.push(itm)
         }
       }

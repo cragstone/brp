@@ -207,12 +207,12 @@ export class BRPSkillSheet extends BRPItemSheetV2 {
         if (item.system.group) { //if this is a Group Skill then don't add it to main skill list
           ui.notifications.warn(item.name + " : " + game.i18n.localize('BRP.stopGroupSkill'));
           continue
-        } else if (collection.find(el => el.brpid === item.flags.brp.brpidFlag.id)) {
+        } else if (collection.find(el => el.brpid === item.flags?.brp?.brpidFlag?.id)) {
           ui.notifications.warn(item.name + " : " + game.i18n.localize('BRP.dupItem'));
           continue
         }
       }
-      collection.push({ uuid: item.uuid, brpid: item.flags.brp.brpidFlag.id })
+      collection.push({ uuid: item.uuid, brpid: item.flags?.brp?.brpidFlag?.id })
     }
 
     await this.item.update({ [`system.${collectionName}`]: collection })

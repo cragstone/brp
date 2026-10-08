@@ -60,23 +60,23 @@
   <div class="skill-scores">
     {{#if isGM}}
       <div class="skill-display">{{localize 'BRP.base'}}</div>
-      <div class="stat-input"><input name="system.base" type="text" value="{{item.system.base}}" data-dtype="Number" />
+      <div class="stat-input"><input name="system.base" type="number" value="{{item.system.base}}"  />
       </div>
       {{#if pcOwner}}
         <div class="skill-display">{{localize 'BRP.xp'}}</div>
-        <div class="stat-input"><input name="system.xp" type="text" value="{{item.system.xp}}" data-dtype="Number" /></div>
+        <div class="stat-input"><input name="system.xp" type="number" value="{{item.system.xp}}"  /></div>
         <div class="skill-display">{{localize 'BRP.profession'}}</div>
-        <div class="stat-input"><input name="system.profession" type="text" value="{{item.system.profession}}"
-            data-dtype="Number" /></div>
+        <div class="stat-input"><input name="system.profession" type="number" value="{{item.system.profession}}"
+             /></div>
         <div class="skill-display">{{localize 'BRP.personal'}}</div>
-        <div class="stat-input"><input name="system.personal" type="text" value="{{item.system.personal}}"
-            data-dtype="Number" /></div>
+        <div class="stat-input"><input name="system.personal" type="number" value="{{item.system.personal}}"
+             /></div>
         <div class="skill-display">{{localize 'BRP.personality'}}</div>
-        <div class="stat-input"><input name="system.personality" type="text" value="{{item.system.personality}}"
-            data-dtype="Number" /></div>
+        <div class="stat-input"><input name="system.personality" type="number" value="{{item.system.personality}}"
+             /></div>
         <div class="skill-display">{{localize 'BRP.culture'}}</div>
-        <div class="stat-input"><input name="system.cutlure" type="text" value="{{item.system.culture}}"
-            data-dtype="Number" /></div>
+        <div class="stat-input"><input name="system.cutlure" type="number" value="{{item.system.culture}}"
+             /></div>
         <div class="skill-display">{{localize 'BRP.effects'}}</div>
         <div class="skill-display centre tertiary">{{item.system.effects}}</div>
         <div class="skill-display">{{localize 'BRP.total'}}</div>

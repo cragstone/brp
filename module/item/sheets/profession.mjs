@@ -230,30 +230,30 @@ export class BRPProfessionSheet extends BRPItemSheetV2 {
       if (optionalSkill) {
         if ((item.system.specialism && item.system.chosen) || (!item.system.specialism && !item.system.group)) {
           // Generic specialization can be included many times
-          if (collection.find(el => el.brpid === item.flags.brp.brpidFlag.id)) {
+          if (collection.find(el => el.brpid === item.flags?.brp?.brpidFlag?.id)) {
             ui.notifications.warn(item.name + " : " + game.i18n.localize('BRP.dupItem'));
             continue // If skill is already in main don't add it
           }
-          if (groups[index].skills.find(el => el.brpid === item.flags.brp.brpidFlag.id)) {
+          if (groups[index].skills.find(el => el.brpid === item.flags?.brp?.brpidFlag?.id)) {
             ui.notifications.warn(item.name + " : " + game.i18n.localize('BRP.dupItem'));
             continue // If skill is already in this group don't add it (doesn't stop skill being added to different groups)
           }
         }
 
-        groups[index].skills = groups[index].skills.concat({ uuid: item.uuid, brpid: item.flags.brp.brpidFlag.id })
+        groups[index].skills = groups[index].skills.concat({ uuid: item.uuid, brpid: item.flags?.brp?.brpidFlag?.id })
 
       } else if (mainPowers) {
         //Dropping in Main Powers list
-        if (collection.find(el => el.brpid === item.flags.brp.brpidFlag.id)) {
+        if (collection.find(el => el.brpid === item.flags?.brp?.brpidFlag?.id)) {
           ui.notifications.warn(item.name + " : " + game.i18n.localize('BRP.dupItem'));
           continue
         }
-        collection.push({ uuid: item.uuid, brpid: item.flags.brp.brpidFlag.id })
+        collection.push({ uuid: item.uuid, brpid: item.flags?.brp?.brpidFlag?.id })
       } else {
         //Dropping in Main Skill list
         if ((item.system.specialism && item.system.chosen) || (!item.system.specialism && !item.system.group)) {
           // Generic specialization and groups can be included many times
-          if (collection.find(el => el.brpid === item.flags.brp.brpidFlag.id)) {
+          if (collection.find(el => el.brpid === item.flags?.brp?.brpidFlag?.id)) {
             ui.notifications.warn(item.name + " : " + game.i18n.localize('BRP.dupItem'));
             continue
           }
@@ -261,14 +261,14 @@ export class BRPProfessionSheet extends BRPItemSheetV2 {
           for (let i = 0; i < groups.length; i++) {
             // If the same skill is in one of the group remove it from the groups
             const index = groups[i].skills.findIndex(
-              el => el.brpid === item.flags.brp.brpidFlag.id
+              el => el.brpid === item.flags?.brp?.brpidFlag?.id
             )
             if (index !== -1) {
               groups[i].skills.splice(index, 1)
             }
           }
         }
-        collection.push({ uuid: item.uuid, brpid: item.flags.brp.brpidFlag.id })
+        collection.push({ uuid: item.uuid, brpid: item.flags?.brp?.brpidFlag?.id })
       }
     }
     await this.item.update({ 'system.groups': groups })

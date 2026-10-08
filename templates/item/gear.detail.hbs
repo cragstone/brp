@@ -1,7 +1,7 @@
 <section class="item tab details {{tab.cssClass}}" data-group="primary" data-tab="details">
   <div class="armour-scores">
     <div class="skill-display">{{localize 'BRP.enc'}}</div>
-    <div class="weapon-input"><input name="system.enc" type="text" value="{{item.system.enc}}" data-dtype="Number" />
+    <div class="weapon-input"><input name="system.enc" type="number" value="{{item.system.enc}}"  />
     </div>
 
     {{#if useWealth}}
@@ -13,23 +13,23 @@
       </div>
     {{else}}
       <div class="skill-display">{{localize 'BRP.price'}} ({{wealthLabel}})</div>
-      <div class="weapon-input"><input name="system.cost" type="text" value="{{item.system.cost}}"
-          data-dtype="Number" /></div>
+      <div class="weapon-input"><input name="system.cost" type="number" value="{{item.system.cost}}"
+           /></div>
     {{/if}}
     <div class="skill-display">{{localize 'BRP.ppStoreCurr' label=item.system.powerLabelAbbr}}</div>
-    <div class="weapon-input"><input name="system.pSCurr" type="text" value="{{item.system.pSCurr}}"
-        data-dtype="Number" /></div>
+    <div class="weapon-input"><input name="system.pSCurr" type="number" value="{{item.system.pSCurr}}"
+         /></div>
     <div class="skill-display">{{localize 'BRP.ppStoreMax' label=item.system.powerLabelAbbr}}</div>
-    <div class="weapon-input"><input name="system.pSMax" type="text" value="{{item.system.pSMax}}"
-        data-dtype="Number" /></div>
+    <div class="weapon-input"><input name="system.pSMax" type="number" value="{{item.system.pSMax}}"
+         /></div>
   </div>
   <br>
 
   {{#if hasOwner}}
     <div class="armour-scores">
       <div class="skill-display">{{localize 'BRP.quantity'}}</div>
-      <div class="weapon-input"><input name="system.quantity" type="text" value="{{item.system.quantity}}"
-          data-dtype="Number" /></div>
+      <div class="weapon-input"><input name="system.quantity" type="number" value="{{item.system.quantity}}"
+           /></div>
       <div class="skill-display" data-tooltip="{{ localize 'BRP.actualENCHint'}}">{{localize 'BRP.actualENC'}}</div>
       <div class="gear-display-plain tertiary">{{item.system.actlEnc}}</div>
       <div class="skill-display">{{localize 'BRP.status'}}</div>

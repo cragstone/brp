@@ -129,7 +129,7 @@ export class BRPCheck {
         }
 
         //Check for First Aid
-        if (game.settings.get('brp', 'firstAidBRPID') != "" && game.settings.get('brp', 'firstAidBRPID') === skill.flags.brp.brpidFlag.id) {
+        if (game.settings.get('brp', 'firstAidBRPID') != "" && game.settings.get('brp', 'firstAidBRPID') === skill.flags?.brp?.brpidFlag?.id) {
           await BRPCheck.firstAid(config)
         }
 

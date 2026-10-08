@@ -2,8 +2,7 @@
   <div class="powermod-scores">
     {{#if isGM}}
       <div class="skill-display" data-tooltip="{{localize 'BRP.cpcModHint'}}">{{localize 'BRP.cpcMod'}}</div>
-      <div class="stat-input"><input name="system.cpcMod" type="text" value="{{item.system.cpcMod}}"
-          data-dtype="Number" /></div>
+      <div class="stat-input"><input name="system.cpcMod" type="number" value="{{item.system.cpcMod}}"/></div>
       <div></div>
       <div class="skill-cat {{#if item.system.perLvl}} toggle-active  {{/if}}"
         data-tooltip="{{localize 'BRP.perLvlHint'}}" data-action="itemToggle" data-property="perLvl">{{localize 'BRP.perLvl'}}</div>
