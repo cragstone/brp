@@ -1087,7 +1087,13 @@
       "skills": "Compét",
       "social": "Social",
       "statistics": "Carac"
-    }
+    },
+    "predefinedActiveEffectKeys": "Touches prédéfinies",
+    "predefinedActiveEffectKeyHint": "",
+    "direct": "Effet direct",
+    "effectActor": "Effets directs",
+    "effectActorHint": "Effets sur l'acteur, plutôt que par un objet",
+    "clearEffects": "Double-clique pour supprimer tous les Effets Directs"
   },
   "TYPES": {
         "Actor": {

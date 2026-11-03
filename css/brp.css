@@ -809,36 +809,32 @@ body.theme-dark .application.brp.sheet,
   width: 185px;
 }
 
-.brp div.active-effect-change-edit {
-  align-items: center;
-  gap: 1rem;
-}
-
-.brp div.active-effect-change-edit select {
-  flex: 0 0 auto;
-}
-
-.brp div.active-effect-change-edit input {
-  flex: 0 0 3rem;
-}
-
-.brp div.active-effect-change-edit a.control-button {
-  flex: 0 0 30px;
-  text-align: center;
-}
-
 .brp .effects-grid {
   display: grid;
-  grid-template-columns: 250px 250px 70px 50px;
+  grid-template-columns: auto 15rem 15rem 5rem 4rem;
   padding-left: 5px;
   margin: 0px;
 }
 
 .brp .effects-list {
-  width: 486px;
+  padding: 0.5rem;
+}
+
+.brp .effects-list-row {
   display: grid;
-  grid-template-columns: 110px 95px 185px 30px;
-  padding-left: 5px;
+  grid-template-columns: auto 11rem 9rem;
+  padding: 0.25rem;
+}
+
+.brp .effects-list-row2 {
+  display: grid;
+  grid-template-columns: auto 1.5rem;
+  padding: 0.25rem;
+}
+
+.brp .effects-list-row:nth-child(odd),
+.brp .effects-list-row2:nth-child(odd) {
+  background-color: var(--brp-tableback);
 }
 
 .brp .stat-display {

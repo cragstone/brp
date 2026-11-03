@@ -1,48 +1,37 @@
-<section class='item tab effects draggable {{tab.cssClass}}' data-group='primary' data-tab='effects'>
-  <div class="bold"> {{localize 'DOCUMENT.ActiveEffects'}}:</div>
-  {{#if isGM}}
-    <div>
-      <div class="base-grid">
-        {{#each effectKeys as |name key|}}
-          <div class="clickable-button" data-action="addItemEffect" data-key="{{key}}">{{localize name}}</div>
-        {{/each}}
-      </div>
-      <br>
-      {{#each effectChanges as |effect|}}
-        <div class="effects-list weapon-input active-effect-list active-effect-change-edit" style="align-items: center;"
-          data-key="{{effect.key}}">
-          <div class="truncate" data-tooltip="{{localize effect.name}}">{{localize effect.name}}</div>
-          <select>
-            <option value="+">{{localize 'BRP.add'}}</option>
-            <option value="-" {{#if effect.negative}} selected="selected" {{/if}}>{{localize 'BRP.subtract'}}</option>
-          </select>
-          <input type="number" value="{{effect.value}}" />
-          <a class="control-button"><i class="item-control fas fa-trash"></i></a>
-        </div>
-      {{/each}}
+<section class='item tab effects {{tab.cssClass}}' data-group='primary' data-tab='effects'>
+  <div class="effects-list">
+    <div class="effects-list-row">
+      <div class="truncate bold">{{localize 'EFFECT.FIELDS.name.label'}}</div>
+      <div class="truncate bold centre">{{localize 'BRP.effect'}}</div>
+      <div class="centre truncate bold centre">{{localize 'BRP.amount'}}</div>
     </div>
-    {{#if effects}}
-      <div class="bottom-line">&nbsp</div>
-      <br>
-      <div class="bold">{{localize 'BRP.manuallyEditActiveEffects'}}:</div>
-      <div class="base-grid">
-        {{#each effects as |effect|}}
-          <div class="clickable-button" data-action="openActiveEffect" data-uuid="{{effect.uuid}}">{{effect.name}}</div>
-        {{/each}}
-      </div>
-    {{/if}}
-
-  {{else}}
     {{#each effectChanges as |effect|}}
-      <div class="effects-list weapon-input active-effect-list active-effect-change-edit" style="align-items: center;"
-        data-key="{{effect.key}}">
-        <div class="truncate" data-tooltip="{{localize effect.name}}">{{localize effect.name}}</div>
+      <div class="effects-list-row">
+        <div class="truncate">{{localize effect.source}}</div>
+        <div class="truncate centre">{{localize effect.name}}</div>
         {{#if effect.negative}}
-          <div>-{{effect.value}}</div>
+          <div class="centre">-{{effect.value}}</div>
         {{else}}
-          <div>{{effect.value}}</div>
+          <div class="centre">{{effect.value}}</div>
         {{/if}}
       </div>
     {{/each}}
+  </div>
+  {{#if isGM}}
+    <div class="effects-list">
+      <div class="effects-list-row2">
+        <div class="truncate bold">{{localize 'DOCUMENT.ActiveEffect'}}</div>
+        <div class="centre rollable" data-tooltip="{{localize 'SIDEBAR.ACTIONS.CREATE.ActiveEffect'}}" data-action="createEffect"><i class="fas fa-plus"></i></div>
+      </div>
+      {{#each effects as |effect|}}
+        <div class="effects-list-row2 item item-edit draggable" data-effect-id="{{effect.id}}">
+          <div class="left rollable" data-tooltip="{{localize 'BRP.viewDoc' type=(localize 'DOCUMENT.ActiveEffect')}}" data-action="openActiveEffect" data-uuid="{{effect.uuid}}">
+            <i class="fas fa-grip-vertical" aria-hidden="true"></i>
+            {{effect.name}}
+          </div>
+          <div></div>
+        </div>
+      {{/each}}
+    </div>
   {{/if}}
 </section>

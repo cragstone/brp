@@ -39,10 +39,8 @@ export class BRPGearSheet extends BRPItemSheetV2 {
     };
     context.equippedOptions = BRPSelectLists.getEquippedOptions(this.document.type);
     context.priceName = game.i18n.localize("BRP." + this.item.system.price);
-    context.effects = BRPActiveEffectSheet.getItemEffectsFromSheet(this.document)
-    const changesActiveEffects = BRPActiveEffectSheet.getEffectChangesFromSheet(this.document)
-    context.effectKeys = changesActiveEffects.effectKeys
-    context.effectChanges = changesActiveEffects.effectChanges
+    context.effects = BRPActiveEffectSheet.getItemEffectsFromDocument(this.document)
+    context.effectChanges = BRPActiveEffectSheet.getEffectChangesFromDocument(this.document)
     context.tabs = this._getTabs(options.parts);
     return context
   }

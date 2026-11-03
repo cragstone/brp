@@ -1,5 +1,9 @@
 # CHANGE LOG
 
+## 14.12
+- Active Effects have been updated (thank you to JamesB)
+- Portugese Brasil language pack added (thanks to Rasangus)
+
 ## 14.11
 - Minor bug fixes
 

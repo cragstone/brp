@@ -1085,7 +1085,13 @@
       "skills": "Habilid",
       "social": "Social",
       "statistics": "Carac"
-    }
+    },
+    "predefinedActiveEffectKeys": "Teclas predefinidas",
+    "predefinedActiveEffectKeyHint": "",
+    "direct": "Efecto directo",
+    "effectActor": "Efectos directos",
+    "effectActorHint": "Efectos sobre el Actor, en vez de a través de un Ítem",
+    "clearEffects": "Haz doble clic para borrar todos los Efectos Directoss"   
   },
   "TYPES": {
         "Actor": {
