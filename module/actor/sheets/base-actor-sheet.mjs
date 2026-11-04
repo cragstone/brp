@@ -74,7 +74,8 @@ export class BRPActorSheetV2 extends api.HandlebarsApplicationMixin(sheets.Actor
       createEffect: this._createEffect,
       viewActiveEffect: this._viewActiveEffect,
       toggleEffect: this._toggleEffect,
-      clearEffects: this._clearEffects      
+      clearEffects: this._clearEffects,
+      rollRes: this._rollRes,      
     }
   }
 
@@ -359,7 +360,14 @@ export class BRPActorSheetV2 extends api.HandlebarsApplicationMixin(sheets.Actor
     await BRPRollType._onImpactRoll(event, target.dataset, this.document)
   }
 
-  //Resest HPL Action
+  //Roll Resource5 (Luck Roll)
+  static async _rollRes (event, target) {
+    let res = target.dataset.res
+    if (!['sanity','res5'].includes(res)) return    
+    BRPRollType._onResourceRoll(event, target.dataset, this.document, res)
+  }
+
+  //Reset HPL Action
   static async _onHPLHeal (event, target) {
     await BRPActorSheetV2._resetHPL(this.actor)
   }

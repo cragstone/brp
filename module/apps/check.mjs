@@ -22,9 +22,10 @@ export class BRPCheck {
   //RP - Reputation Roll
   //IM - Spell Impact Roll
   //QC - Quick Combat
+  //RS = Resource5 Roll
 
   //Card Types
-  //NO = Normnal Roll
+  //NO = Normal Roll
   //RE = Resistance Roll (CH only)
   //PP = POW v POW (CH only)
   //GR = Combined (Group) Roll
@@ -212,8 +213,18 @@ export class BRPCheck {
         config.malfunction = weapon.system.mal
         config.chatTemplate = 'systems/brp/templates/chat/quick-combat.html'
         config.specLabel = game.i18n.localize('BRP.' + weapon.system.special)
-
         break
+      case 'RS':
+        let resource = config.characteristic
+        console.log(resource)
+        if (resource === 'res5') {
+          config.label = game.settings.get('brp','res5LabelLong') || game.i18n.localize('BRP.res5');
+        } else {
+          config.label = game.settings.get('brp','sanLabelLong') || game.i18n.localize('BRP.san');          
+        }  
+        config.rawScore = particActor.system[resource].value
+        config.targetScore = particActor.system[resource].value ?? 0        
+        break;
       default:
         ui.notifications.error(options.rollType + ": " + game.i18n.format('BRP.errorRollInvalid'))
         return false

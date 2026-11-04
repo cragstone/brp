@@ -263,7 +263,11 @@
 
         {{#if useSAN}}
           <div class="each-resource centre">
-            <label for="system.sanity.value" class="resource-label">{{system.sanity.label}}</label>
+            <label for="system.sanity.value" class="resource-label">{{system.sanity.label}}
+              <a class="rollable" data-action="rollRes" data-res="sanity" style="vertical-align: middle; font-size: 16px">
+                <i class="fas fa-dice-d20"></i></a>
+
+            </label>    
             <div class="resource-grid">
               <div></div>
               <input class="attrib-inp centre" type="number" name="system.sanity.value" value="{{system.sanity.value}}"/>
@@ -276,13 +280,19 @@
 
         {{#if useRES5}}
           <div class="each-resource centre">
-            <label for="system.res5.value" class="resource-label">{{system.res5.label}}</label>
+            <label for="system.res5.value" class="resource-label">{{system.res5.label}}
+              <a class="rollable" data-action="rollRes" data-res="res5" style="vertical-align: middle; font-size: 16px">
+                <i class="fas fa-dice-d20"></i>
+              </a>
+            </label>
             <div class="resource-grid">
-              <div></div>
+              <div class="right rollable" data-action="attribute" data-att="res5" data-adj="spend"><a class="smallIcon"
+                  data-tooltip="{{localize 'BRP.ppSpend'}}"><i class="fas fa-moon"></i></a></div>
               <input class="attrib-inp centre" type="number" name="system.res5.value" value="{{system.res5.value}}"/>
               <span class="divider"> / </span>
               <input class="attrib-inp centre" type="number" name="system.res5.max" value="{{system.res5.max}}"/>
-              <div></div>
+              <div class="left rollable" data-action="attribute" data-att="res5" data-adj="recover"><a class="smallIcon"
+                  data-tooltip="{{localize 'BRP.ppRecover'}}"><i class="fas fa-moon-stars"></i></a></div>
             </div>
           </div>
         {{/if}}

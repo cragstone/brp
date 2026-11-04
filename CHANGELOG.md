@@ -1,5 +1,10 @@
 # CHANGE LOG
 
+## 14.13
+- Bug fix for Wound sheets not opening.
+- Resource5 now has icons to spend/recover a point but also a dice roll (click D20 icon) v current score.  This is aimed at being a Luck Roll
+- The same Roll is also now available for SANITY
+
 ## 14.12
 - Active Effects have been updated (thank you to JamesB)
 - Portugese Brasil language pack added (thanks to Rasangus)

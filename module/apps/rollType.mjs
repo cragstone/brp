@@ -15,6 +15,7 @@ export class BRPRollType {
   //RP - Reputation Roll
   //IM - Spell Impact Roll
   //QC - Quick Combat
+  //RS - Resource5 Roll
 
   //Card Types
   //NO = Normnal Roll
@@ -273,6 +274,21 @@ export class BRPRollType {
     })
   }
 
-
+  //Start Resource Roll
+  static async _onResourceRoll(event, detail, actor, resource) {
+    let cardType = 'NO';
+    let shiftKey = event.shiftKey
+    if (game.settings.get('brp', 'switchShift')) {
+      shiftKey = !shiftKey
+    }
+    BRPCheck._trigger({
+      rollType: 'RS',
+      cardType,
+      characteristic: resource,
+      shiftKey: shiftKey,
+      actor: actor,
+      token: actor.token
+    })
+  }
 
 }
