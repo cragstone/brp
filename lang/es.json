@@ -848,6 +848,7 @@
       "info": "Info",
       "key": "ID del sistema (BRPID)",
       "others": "Otros documentos con este BRPID e idioma (excluyendo documentos en otros actores y elementos)",
+      "new": "New custom BRPID",      
       "priority": "Prioridad de ID del sistema",
       "summary": "Establece un identificador de grupo que permita encontrar la versión más reciente de este {type}. El ID del sistema debe usar la traducción al inglés de {type} para facilitar la localización en todos los idiomas.",
       "title": "Editar ID del sistema (BRPID)"

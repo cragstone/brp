@@ -35,6 +35,7 @@ import BRPItemSorceryModel from '../models/item-sorcery-model.mjs'
 import BRPItemSuperModel from '../models/item-super-model.mjs'
 import BRPItemWeaponModel from '../models/item-weapon-model.mjs'
 import BRPItemWoundModel from '../models/item-wound-model.mjs'
+import BRPPause from '../apps/pause.mjs';
 
 export default function Init() {
   //Add classes to global game object
@@ -54,6 +55,7 @@ export default function Init() {
   };
   //Add Custom Configuration
   CONFIG.BRP = BRP;
+  CONFIG.ui.pause = BRPPause;
 
   //Register Settings and Handlebar Helpers
   registerSettings();

@@ -29,7 +29,7 @@ export default class BRPClickableEvents extends foundry.data.regionBehaviors.Reg
     const typeIcons = {
       brpClickableEvents: "fa-solid fa-computer-mouse",
     };
-    const types = ["brpClickableEvents"];
+    const types = [];
     for (const CCI of known) {
       const name = new CCI().constructor.name;
       dataModels[name] = CCI;

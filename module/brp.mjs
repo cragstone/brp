@@ -15,11 +15,13 @@ import createToken from "./hooks/create-token.mjs";
 import { BRPSelectLists } from "./apps/select-lists.mjs";
 import { updateWorld } from "./setup/update.mjs";
 import RenderRollTableSheet from "./hooks/render-roll-table-sheet.mjs";
+import EmptyScene from './setup/empty-scene.mjs';
 
 Hooks.once('init', Init);
 
 
 Hooks.on('ready', async () => {
+  EmptyScene();
   //Turn sockets on
   game.socket.on('system.brp', async data => {
     BRPSystemSocket.callSocket(data)

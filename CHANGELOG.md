@@ -1,5 +1,10 @@
 # CHANGE LOG
 
+## 14.14
+- Header font changed and default size changed.  If you've made game setting changes please review the changes.
+- BRPID keys added in language files - Portuguese Brasil translations added thanks to Rasangus, French and Spanish translations required
+- Powered by BRP logo added as the Pause image
+
 ## 14.13
 - Bug fix for Wound sheets not opening.
 - Resource5 now has icons to spend/recover a point but also a dice roll (click D20 icon) v current score.  This is aimed at being a Luck Roll
@@ -7,7 +12,7 @@
 
 ## 14.12
 - Active Effects have been updated (thank you to JamesB)
-- Portugese Brasil language pack added (thanks to Rasangus)
+- Portuguese Brasil language pack added (thanks to Rasangus)
 
 ## 14.11
 - Minor bug fixes

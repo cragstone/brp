@@ -125,7 +125,7 @@ const SETTINGS = {
     scope: "world",
     config: false,
     type: Number,
-    default: 20
+    default: 16
   },
 
   brpIconPrimary: {

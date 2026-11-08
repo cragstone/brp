@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montenegrin+Gothic+One&display=swap');
 
-@font-face {
-  font-family: 'Modesto';
-  font-style: normal;
-  font-weight: 400;
-  src: url('./fonts/modesto-condensed.woff2') format('woff2');
-}
 
 @font-face{
   font-family: 'BoucherieBlock';
@@ -23,8 +18,8 @@
   --actor-rollable-shadow: red;
   --actor-sheet-back: rgb(217, 219, 218);
   --actor-tab-name-colour: black;
-  --actor-title-font-size: 20px;
-  --actor-title-font: "BoucherieBlock";
+  --actor-title-font-size: 16px;
+  --actor-title-font: "Merriweather";
   --brp-background: url("../assets/parchment.webp");
   --brp-border-color: rgb(68, 7, 4);
   --brp-button-colour: rgb(211,211,211);
@@ -1663,7 +1658,7 @@ form .file-form-group-stacked {
   height: 26px;
   text-transform: uppercase;
   font-family: var(--actor-title-font);
-  font-size: 20px;
+  font-size: var(--actor-title-font-size);
   padding: 3px 0px 3px 0px;
 
 }
@@ -1795,4 +1790,18 @@ form .file-form-group-stacked {
 
 .brp.dialog.item .window-content {
   overflow-y:auto;
+}
+
+figure.paused {
+  height: 200px;
+}
+
+#pause {
+  img {
+    height: 150px;
+    width: 150px;
+  }
+  figcaption {
+    font-size: 28px;
+  }
 }
